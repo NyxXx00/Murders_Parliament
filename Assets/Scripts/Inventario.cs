@@ -1,12 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static Unity.Burst.Intrinsics.X86.Avx;
-using static UnityEditor.PlayerSettings;
-using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 public class Inventario : MonoBehaviour {
 
