@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Inventario : MonoBehaviour {
 
+    public static Inventario Instance { get; private set; }
+
+
     public Button toggleButton;
     public RectTransform panel;
     public Transform itemsContainer;
@@ -21,7 +24,7 @@ public class Inventario : MonoBehaviour {
     private float toggleCooldown = 0.2f;
 
     private bool isOpen = false;
-    private List<InventorySlot> slots = new List<InventorySlot>();
+    public List<InventorySlot> slots = new List<InventorySlot>();
 
     public void Start() {
         if (panel == null || toggleButton == null || itemsContainer == null || circleSlotPrefab == null) {
@@ -33,11 +36,16 @@ public class Inventario : MonoBehaviour {
         itemsContainer.gameObject.SetActive(false); // Oculta ItemsContainer al inicio
         toggleButton.onClick.AddListener(Toggle);
 
+
         for (int i = 0; i < slotCount; i++) {
             GameObject slot = Instantiate(circleSlotPrefab, itemsContainer);
             Image icon = slot.transform.Find("ItemIcon").GetComponent<Image>();
             TextMeshProUGUI qty = slot.transform.Find("QuantityText")?.GetComponent<TextMeshProUGUI>();
             slots.Add(new InventorySlot(null, 0, icon, qty));
+
+            SlotHandler handler = slot.GetComponent<SlotHandler>();
+            if (handler != null) handler.SetInventory(this);
+
             Debug.Log("Slot creado en ItemsContainer: " + i + ", Parent: " + itemsContainer.name);
         }
     }

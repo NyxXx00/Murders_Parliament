@@ -59,7 +59,7 @@ public class PickupItem : MonoBehaviour {
         }
     }
 
-   public void OnPickup() {
+    public void OnPickup() {
         Debug.Log("Clic detectado en OnPickup. Cámara actual: " + (cam != null ? cam.name : "null"));
         if (cam != null) {
             Ray ray = cam.ScreenPointToRay(Mouse.current.position.ReadValue());
