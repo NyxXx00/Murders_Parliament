@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<InterpretationXL xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DialogueLines>
+    <GUID>0e248d1c-dc37-4da4-b96e-e5ae6001095b</GUID>
+    <output_GUID>275e50d4-8ef1-48f0-aab1-a8071e2962e2</output_GUID>
+    <Switch_outputs_GUIDs />
+    <action>Start</action>
+    <position>
+      <x>0</x>
+      <y>0</y>
+    </position>
+    <translations />
+  </DialogueLines>
+  <DialogueLines>
+    <GUID>275e50d4-8ef1-48f0-aab1-a8071e2962e2</GUID>
+    <Switch_outputs_GUIDs />
+    <action>Dialogue</action>
+    <characterId>Zorra</characterId>
+    <position>
+      <x>224.8</x>
+      <y>-36</y>
+    </position>
+    <translations>
+      <translation>
+        <id>Español</id>
+        <text>Mmmmm la puerta esta cerrada
+</text>
+      </translation>
+    </translations>
+  </DialogueLines>
+  <lenguageSelectOnColumns>0</lenguageSelectOnColumns>
+</InterpretationXL>
