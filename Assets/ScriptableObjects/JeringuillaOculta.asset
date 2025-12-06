@@ -15,9 +15,9 @@ MonoBehaviour:
   ItemID: 
   ItemName: 
   Description: 
-  icon: {fileID: 0}
+  icon: {fileID: 5909649955675806047, guid: a23f1e35374ad244a94284dd7ebd29bd, type: 3}
   cursorTexture: {fileID: 0}
-  tieneSecreto: 0
+  tieneSecreto: 1
   RevealedItemData: {fileID: 0}
   SecretPrompt: Hay algo raro con este objeto...
   RevealedDescription: Tiene una jeringuilla dentro!!
