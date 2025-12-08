@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 2ad5f410642639d4ebf66a1c30f6055a
+guid: e82e5797bf294064ca8aa21d7a79749e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5992761392973993716
-    second: capsula_0
+      213: 7262776137014397404
+    second: Sirvientes_MsP_M_SinFondo_0
+  - first:
+      213: 8343961757165824029
+    second: Sirvientes_MsP_M_SinFondo_1
+  - first:
+      213: 3750141458171848588
+    second: Sirvientes_MsP_M_SinFondo_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: capsula_0
+      name: Sirvientes_MsP_M_SinFondo_0
       rect:
         serializedVersion: 2
-        x: 168
-        y: 303
-        width: 587
-        height: 445
+        x: 0
+        y: 1657
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c092c1c934f65dca0800000000000000
-      internalID: -5992761392973993716
+      spriteID: cd94de1ba609ac460800000000000000
+      internalID: 7262776137014397404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sirvientes_MsP_M_SinFondo_1
+      rect:
+        serializedVersion: 2
+        x: 1994
+        y: 1657
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d18205b8205bbc370800000000000000
+      internalID: 8343961757165824029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sirvientes_MsP_M_SinFondo_2
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 169
+        width: 1144
+        height: 1404
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c876ccf79cd2b0430800000000000000
+      internalID: 3750141458171848588
       vertices: []
       indices: 
       edges: []
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      capsula_0: -5992761392973993716
+      Sirvientes_MsP_M_SinFondo_0: 7262776137014397404
+      Sirvientes_MsP_M_SinFondo_1: 8343961757165824029
+      Sirvientes_MsP_M_SinFondo_2: 3750141458171848588
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

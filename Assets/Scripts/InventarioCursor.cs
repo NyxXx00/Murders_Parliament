@@ -1,19 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
+using UnityEngine.UI;
 
 public class InventarioCursor : MonoBehaviour {
 
     public static InventarioCursor Instance { get; private set; }
 
     [Header("Configuración")]
-    // Textura de cursor predeterminada 
     public Texture2D texturaCursorBase;
-
-    // Ajusta el hotspot según el tamaño final de tu cursor
     public Vector2 hotspot = new Vector2(32, 32);
 
-    private ItemData itemSeleccionado = null; // Variable en español
+    private ItemData itemSeleccionado = null;
 
     void Awake() {
         if (Instance == null) Instance = this;
@@ -21,48 +19,43 @@ public class InventarioCursor : MonoBehaviour {
     }
 
     void Start() {
-        // Inicializa con la textura base, si está asignada
+        // Al inicio, establecemos el cursor base.
         VolverACursorBase();
- 
     }
 
-    // Establece el ítem en el cursor y cambia la textura.
     public void SeleccionarItem(ItemData item) {
         itemSeleccionado = item;
 
+        // Cargar la textura del ítem o volver a la base.
         if (item != null && item.cursorTexture != null) {
-            // Usa la textura específica del ítem
             Cursor.SetCursor(item.cursorTexture, hotspot, CursorMode.Auto);
         }
         else {
-            // Si el ítem es nulo o no tiene textura, vuelve al cursor base
             VolverACursorBase();
         }
     }
 
-
-    //Restablece el cursor al modo base y borra el ítem seleccionado.
+    // Esta función ahora será llamada SÓLO por Inventario.DeselectItem() o por ObjetoInteractuable.
     public void VolverACursorBase() {
         itemSeleccionado = null;
 
-        // Si hay una textura base asignada, úsala. Si no, usa el cursor por defecto del sistema (null).
-        Cursor.SetCursor(texturaCursorBase, Vector2.zero, CursorMode.Auto);
+        // Aseguramos que el cursor base se establezca con su propio hotspot
+        Cursor.SetCursor(texturaCursorBase, hotspot, CursorMode.Auto);
     }
 
-    // Devuelve el ItemData que actualmente está siendo "sostenido" por el cursor.
     public ItemData GetItemSeleccionado() => itemSeleccionado;
 
     void Update() {
-        // Lógica para soltar el ítem con el clic derecho
+        // Si haces clic DERECHO, siempre deselecciona.
         if (Mouse.current != null && Mouse.current.rightButton.wasPressedThisFrame) {
             if (itemSeleccionado != null) {
-                VolverACursorBase(); // Llama al método renombrado
 
-                // Asegura que la ranura del inventario se deseleccione también
                 if (Inventario.Instance != null) {
                     Inventario.Instance.DeselectItem();
+
                 }
             }
         }
+
     }
 }

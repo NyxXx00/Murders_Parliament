@@ -27,7 +27,7 @@ public class CargarEscena : MonoBehaviour
             }
         }
         else {
-            Debug.LogError($"¡ERROR! No se encontró un SpawnPoint con la ID: {spawnPointID}");
+            Debug.LogError("¡ERROR! No se encontró un SpawnPoint con la ID: {spawnPointID}");
         }
 
         // Limpia la id para evitar errores

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2ad5f410642639d4ebf66a1c30f6055a
+guid: 1bd2fa1aac1439a4f90d3f0925a05dba
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5992761392973993716
-    second: capsula_0
+      213: 7293668834961329230
+    second: bandeja_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: capsula_0
+      name: bandeja_0
       rect:
         serializedVersion: 2
-        x: 168
-        y: 303
-        width: 587
-        height: 445
+        x: 52
+        y: 375
+        width: 695
+        height: 423
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c092c1c934f65dca0800000000000000
-      internalID: -5992761392973993716
+      spriteID: e4c05317921583560800000000000000
+      internalID: 7293668834961329230
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      capsula_0: -5992761392973993716
+      bandeja_0: 7293668834961329230
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
