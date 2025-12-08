@@ -48,7 +48,7 @@ public class InspeccionManager : MonoBehaviour {
             StopCoroutine(closeTimerCoroutine);
         }
         // Inicia la corutina, pasando 5 segundos como duración
-        closeTimerCoroutine = StartCoroutine(TimerToClosePanel(5f));
+        closeTimerCoroutine = StartCoroutine(TimerToClosePanel(3f));
 
     }
 

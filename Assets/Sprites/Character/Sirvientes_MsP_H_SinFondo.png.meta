@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 536e263837e3e7e43aa0f1a8678089e5
+guid: a10822ed926db5a408d3d7cec3b570f1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 904311581396026782
-    second: LlaveCursor_0
+      213: 7180978810662887660
+    second: Sirvientes_MsP_H_SinFondo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LlaveCursor_0
+      name: Sirvientes_MsP_H_SinFondo_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 22
-        width: 29
-        height: 20
+        x: 421
+        y: 164
+        width: 1158
+        height: 1468
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e95c16f8792cc8c00800000000000000
-      internalID: 904311581396026782
+      spriteID: ce02b2d8e26f7a360800000000000000
+      internalID: 7180978810662887660
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      LlaveCursor_0: 904311581396026782
+      Sirvientes_MsP_H_SinFondo_0: 7180978810662887660
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
