@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 536e263837e3e7e43aa0f1a8678089e5
+guid: f49d6e9ef2398a54e91feedf9644e3a8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 904311581396026782
-    second: LlaveCursor_0
+      213: -4520703849311479764
+    second: pintalabios pero pincha_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -24,7 +24,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -57,7 +57,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 8
+  textureType: 7
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LlaveCursor_0
+      name: pintalabios pero pincha_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 22
-        width: 29
-        height: 20
+        x: 298
+        y: 99
+        width: 213
+        height: 940
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e95c16f8792cc8c00800000000000000
-      internalID: 904311581396026782
+      spriteID: c285c0ffccb3341c0800000000000000
+      internalID: -4520703849311479764
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      LlaveCursor_0: 904311581396026782
+      pintalabios pero pincha_0: -4520703849311479764
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

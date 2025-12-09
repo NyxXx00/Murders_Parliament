@@ -15,7 +15,7 @@ MonoBehaviour:
   ItemID: LipstickSyringe
   ItemName: Pintalabios
   Description: 
-  icon: {fileID: 5907148636361228965, guid: 21ae888a50d2e4742a51d9cece058e26, type: 3}
+  icon: {fileID: -2765999091853018710, guid: fc5f37fb2c8118647a4e9b1af79aecde, type: 3}
   cursorTexture: {fileID: 2800000, guid: 53880b47a9319e94ca4144611a7cb0fd, type: 3}
   tieneSecreto: 1
   RevealedItemData: {fileID: 11400000, guid: a4e4506c0d04c2c4ba0b7bffd6b0c3cc, type: 2}
