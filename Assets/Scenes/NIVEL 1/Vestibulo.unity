@@ -910,6 +910,7 @@ GameObject:
   - component: {fileID: 785978781}
   - component: {fileID: 785978779}
   - component: {fileID: 785978784}
+  - component: {fileID: 785978785}
   m_Layer: 6
   m_Name: Elvira
   m_TagString: Player
@@ -929,7 +930,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e22c3d5aeeae914a90880c8c0a64840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanciaMaximaInteraccion: 2
 --- !u!50 &785978781
 Rigidbody2D:
   serializedVersion: 5
@@ -1073,6 +1073,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.2160883, y: 16.35638}
   m_EdgeRadius: 0
+--- !u!114 &785978785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785978778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 104e3cd7c74db7e4da1b800af05860bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &804068718 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7634237661213490326, guid: b0b7c7930ee38e14e955756643a61802, type: 3}
@@ -1248,7 +1260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a12c99d4f889046a5ecbae7d941457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: Pasillo_Baile
+  nextSceneName: Prueba
   destinationPointID: EntradaVestibulo
 --- !u!212 &1051063416
 SpriteRenderer:
@@ -1295,7 +1307,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2210,6 +2222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1345357355}
   - component: {fileID: 1345357356}
+  - component: {fileID: 1345357357}
   m_Layer: 5
   m_Name: InspeccionPanel
   m_TagString: Untagged
@@ -2266,6 +2279,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!114 &1345357357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345357354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b32e9371acf0a7e468de483d6fb48c95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1387809916
 PrefabInstance:
   m_ObjectHideFlags: 0
