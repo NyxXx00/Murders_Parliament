@@ -9,10 +9,6 @@ public class PlayerControl : MonoBehaviour {
     private Vector2 moveInput;
 
     private void Awake() {
-
-        // Asegura que el personaje no se destruya al cargar una escena.
-        DontDestroyOnLoad(this.gameObject);
-
         rbody = GetComponent<Rigidbody2D>();
         if (inputActions == null) {
             inputActions = new InputSystem_Actions();
@@ -30,7 +26,7 @@ public class PlayerControl : MonoBehaviour {
 
     private void OnDisable() {
         if (inputActions != null) {
-            // Deshabilita la acción cuando el objeto se deshabilita
+            // Deshabilita la acci?n cuando el objeto se deshabilita
             inputActions.Player.Move.Disable();
         }
     }

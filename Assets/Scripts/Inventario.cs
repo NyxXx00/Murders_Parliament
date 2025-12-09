@@ -37,6 +37,11 @@ public class Inventario : MonoBehaviour {
 
     private List<string> idsItemsInspeccionados = new List<string>();
 
+    // NO se usa GridLayoutGroup ni AspectLock
+
+    private Canvas lienzoPersistente;
+
+
     public void MarkItemInspected(string itemID) {
         if (!idsItemsInspeccionados.Contains(itemID)) {
             idsItemsInspeccionados.Add(itemID);
@@ -47,9 +52,6 @@ public class Inventario : MonoBehaviour {
     public bool HasItemBeenInspected(string itemID) {
         return idsItemsInspeccionados.Contains(itemID);
     }
-
-    private Canvas lienzoPersistente;
-
 
     private void Awake() {
         if (Instance == null) {
@@ -92,20 +94,22 @@ public class Inventario : MonoBehaviour {
             return;
         }
 
+        // Inicializa las ranuras.
         for (int i = 0; i < contadorRanuras; i++) {
             GameObject objetoRanura = Instantiate(prefabRanuraCircular, contenedorItems);
 
+            // Búsqueda de componentes de UI
             Image icono = objetoRanura.transform.Find("ItemIcon").GetComponent<Image>();
+            // Usando operador ? para evitar fallos si no existe el objeto
             Image resalteSecreto = objetoRanura.transform.Find("Highlight")?.GetComponent<Image>();
             Image resalteSeleccion = objetoRanura.transform.Find("SelectionHighlight")?.GetComponent<Image>();
 
-
             ranuras.Add(new RanuraInventario(null, 0, icono, resalteSecreto, resalteSeleccion));
 
-            SlotHandler handler = objetoRanura.GetComponent<SlotHandler>();
-            if (handler != null) {
+            SlotHandler manejador = objetoRanura.GetComponent<SlotHandler>();
+            if (manejador != null) {
                 int indiceRanura = i;
-                handler.SetInventory(this, indiceRanura);
+                manejador.SetInventory(this, indiceRanura);
             }
         }
     }
@@ -128,12 +132,7 @@ public class Inventario : MonoBehaviour {
         if (estaAbierto) {
             UpdateAllSlotUI();
         }
-        else {
-            DeselectItem();
-            ultimoObjetoRecogido = null;
-        }
-
-        Debug.Log("Función Toggle llamada. Inventario Estado: " + (estaAbierto ? "ABIERTO" : "CERRADO"));
+       
     }
 
     public void UpdateAllSlotUI() {
@@ -214,12 +213,11 @@ public class Inventario : MonoBehaviour {
             RanuraSeleccionada.UpdateSelection(true);
 
             if (InventarioCursor.Instance != null) {
+                // Llamamos a SeleccionarItem, que internamente cambia el cursor
                 InventarioCursor.Instance.SeleccionarItem(DatosItemSeleccionado);
             }
 
             alCambiarSeleccion?.Invoke(DatosItemSeleccionado);
-
-            Debug.Log("Objeto seleccionado: " + DatosItemSeleccionado.ItemName);
         }
     }
 
@@ -231,12 +229,11 @@ public class Inventario : MonoBehaviour {
         RanuraSeleccionada = null;
 
         if (InventarioCursor.Instance != null) {
+            // Llama a InventarioCursor para restablecer la textura del cursor a la base
             InventarioCursor.Instance.VolverACursorBase();
         }
 
         alCambiarSeleccion?.Invoke(null);
-
-        Debug.Log("Objeto deseleccionado.");
     }
 
     public bool HasItem(string itemID) {
