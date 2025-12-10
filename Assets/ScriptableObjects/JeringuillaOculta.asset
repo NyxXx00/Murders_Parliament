@@ -15,7 +15,7 @@ MonoBehaviour:
   ItemID: 
   ItemName: 
   Description: 
-  icon: {fileID: 5909649955675806047, guid: a23f1e35374ad244a94284dd7ebd29bd, type: 3}
+  icon: {fileID: -4520703849311479764, guid: 16bd0b240341f3c4b8a2684513772b66, type: 3}
   cursorTexture: {fileID: 0}
   tieneSecreto: 1
   RevealedItemData: {fileID: 0}
