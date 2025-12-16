@@ -129,7 +129,7 @@ public class Inventario : MonoBehaviour {
             UpdateAllSlotUI();
         }
         else {
-            DeselectItem();
+           
             ultimoObjetoRecogido = null;
         }
 

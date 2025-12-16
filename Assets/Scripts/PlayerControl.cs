@@ -1,6 +1,9 @@
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
+
+    private static PlayerControl instance;
+
     public static float movementSpeed = 1.5f;
     public InputSystem_Actions inputActions;
 
@@ -9,11 +12,17 @@ public class PlayerControl : MonoBehaviour {
     private Vector2 moveInput;
 
     private void Awake() {
+        //  Evitar duplicados
+        if (instance != null && instance != this) {
+            Destroy(gameObject);
+            return;
+        }
 
-        // Asegura que el personaje no se destruya al cargar una escena.
-        DontDestroyOnLoad(this.gameObject);
+        instance = this;
+        DontDestroyOnLoad(gameObject);
 
         rbody = GetComponent<Rigidbody2D>();
+
         if (inputActions == null) {
             inputActions = new InputSystem_Actions();
             inputActions.Player.Enable();

@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
-using System;
 
 public class InventarioCursor : MonoBehaviour {
 
@@ -16,14 +15,16 @@ public class InventarioCursor : MonoBehaviour {
     private ItemData itemSeleccionado = null; // Variable en español
 
     void Awake() {
-        if (Instance == null) Instance = this;
+        if (Instance == null) {
+            Instance = this;
+        }
         else Destroy(gameObject);
     }
 
     void Start() {
         // Inicializa con la textura base, si está asignada
         VolverACursorBase();
- 
+
     }
 
     // Establece el ítem en el cursor y cambia la textura.
