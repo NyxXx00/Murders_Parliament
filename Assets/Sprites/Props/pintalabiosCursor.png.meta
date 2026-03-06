@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Sprites/Props/pintalabiosCursor.png.meta
 guid: 374df213500709c478a786ed2b09f006
+========
+guid: 21ae888a50d2e4742a51d9cece058e26
+>>>>>>>> 10/12:Assets/Sprites/PropsAntiguos/Pintalabios 1.png.meta
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -24,7 +28,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -57,7 +61,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 7
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1

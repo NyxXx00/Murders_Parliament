@@ -20,9 +20,12 @@ public class InspeccionManager : MonoBehaviour {
     private bool shouldBeActive = false;
 
     private void Awake() {
-        // Singleton
-        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
+        if (Instance != null && Instance != this) {
+            Destroy(gameObject);
+            return;
+        }
         Instance = this;
+        DontDestroyOnLoad(gameObject);
 
         inspectionPanel.SetActive(false);
     }

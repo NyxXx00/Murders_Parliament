@@ -15,8 +15,8 @@ MonoBehaviour:
   ItemID: PoisonCapsule
   ItemName: "C\xE1psula Letal"
   Description: 
-  icon: {fileID: -385219228455464780, guid: 3668601c8c21efe4c9e9dd45ba4c3a73, type: 3}
-  cursorTexture: {fileID: 2800000, guid: 808deb02849252342bef1814ff8cc544, type: 3}
+  icon: {fileID: -4520703849311479764, guid: 16bd0b240341f3c4b8a2684513772b66, type: 3}
+  cursorTexture: {fileID: 2800000, guid: 504bf726df192b449a0eaf8163ff496a, type: 3}
   tieneSecreto: 0
   RevealedItemData: {fileID: 0}
   SecretPrompt: Hay algo raro con este objeto...
