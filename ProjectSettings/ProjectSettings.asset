@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: Bloom Nocta
   productName: Murder's Parliament
-  defaultCursor: {fileID: 2800000, guid: b74b10dfc91d48b419f30df0ac634ba7, type: 3}
+  defaultCursor: {fileID: 2800000, guid: fe0b9b84ade39114a920400d1081b2e8, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.18336059, g: 0.20663851, b: 0.3433962, a: 1}
   m_ShowUnitySplashScreen: 1

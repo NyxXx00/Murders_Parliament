@@ -8,6 +8,9 @@ public class PickupItem : MonoBehaviour {
     // Bandera para saber si el jugador está en rango de clic
     private bool canBePickedUp = false;
 
+    // ID de la tarea que se marcará como completada al recibir el objeto
+    public string taskID; 
+
     // Referencia al inventario
     private Inventario inventario;
 
@@ -45,6 +48,11 @@ public class PickupItem : MonoBehaviour {
             if (inventario.AddItem(itemData, quantity)) {
 
                 Debug.Log("Objeto recogido con Clic: " + itemData.ItemName);
+
+                // COMPLETAR LA TAREA
+                if (TareasManager.Instance != null && taskID != "") {
+                    TareasManager.Instance.CompleteTask(taskID);
+                }
 
                 //destruye el objeto del mundo
                 canBePickedUp = false;

@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/NIVEL 1/Pasillo_Baile.unity
     guid: 53d3390bf0817d34fb4a1cd9fd3d5ec3
   - enabled: 1
+    path: "Assets/Scenes/NIVEL 1/Ba\xF1o.unity"
+    guid: 109fa938abcc2674fbee16db98be693c
+  - enabled: 1
     path: Assets/Scenes/NIVEL 1/Cocina.unity
     guid: 9a16e1356cc90ee44b75118384dc1608
   m_configObjects:

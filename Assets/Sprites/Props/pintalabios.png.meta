@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fc5f37fb2c8118647a4e9b1af79aecde
+guid: b5f71a57c9e9e004d957c1621f1ec324
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2765999091853018710
-    second: pintalabios_0
+      213: -7165948434570489881
+    second: pintalabios 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pintalabios_0
+      name: pintalabios 1_0
       rect:
         serializedVersion: 2
         x: 298
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aa93c091b723d99d0800000000000000
-      internalID: -2765999091853018710
+      spriteID: 7efc8a69ddf6d8c90800000000000000
+      internalID: -7165948434570489881
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pintalabios_0: -2765999091853018710
+      pintalabios 1_0: -7165948434570489881
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

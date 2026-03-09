@@ -6,7 +6,7 @@ public class InspeccionManager : MonoBehaviour {
 
     public static InspeccionManager Instance { get; private set; }
 
-    [Header("Configuración de UI")]
+    [Header("Configuraciï¿½n de UI")]
     public GameObject inspectionPanel;
     public Image itemIconDisplay;
     public TextMeshProUGUI itemNameDisplay;
@@ -20,18 +20,21 @@ public class InspeccionManager : MonoBehaviour {
     private bool shouldBeActive = false;
 
     private void Awake() {
-        // Singleton
-        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
+        if (Instance != null && Instance != this) {
+            Destroy(gameObject);
+            return;
+        }
         Instance = this;
+        DontDestroyOnLoad(gameObject);
 
         inspectionPanel.SetActive(false);
     }
 
     void LateUpdate() {
-        // Forzar la activación después de que todos los cálculos de UI terminen
+        // Forzar la activaciï¿½n despuï¿½s de que todos los cï¿½lculos de UI terminen
         if (shouldBeActive && !inspectionPanel.activeSelf) {
             inspectionPanel.SetActive(true);
-            Debug.Log("InspeccionManager: ¡Activación forzada en LateUpdate!");
+            Debug.Log("InspeccionManager: ï¿½Activaciï¿½n forzada en LateUpdate!");
         }
     }
 
@@ -47,7 +50,7 @@ public class InspeccionManager : MonoBehaviour {
         if (closeTimerCoroutine != null) {
             StopCoroutine(closeTimerCoroutine);
         }
-        // Inicia la corutina, pasando 5 segundos como duración
+        // Inicia la corutina, pasando 5 segundos como duraciï¿½n
         closeTimerCoroutine = StartCoroutine(TimerToClosePanel(3f));
 
     }
@@ -56,7 +59,7 @@ public class InspeccionManager : MonoBehaviour {
         itemIconDisplay.sprite = currentInspectedItem.icon;
         itemNameDisplay.text = currentInspectedItem.ItemName;
 
-        // Mostrar el texto revelado si el secreto ya se encontró, o si no hay secreto.
+        // Mostrar el texto revelado si el secreto ya se encontrï¿½, o si no hay secreto.
         if (secretHasBeenFound || !currentInspectedItem.tieneSecreto) {
             itemDescriptionDisplay.text = currentInspectedItem.RevealedDescription;
         }
@@ -68,17 +71,17 @@ public class InspeccionManager : MonoBehaviour {
 
 
     public void AttemptRevealSecret() {
-        // asegura de que el ítem tiene un secreto y que no ha sido revelado previamente
+        // asegura de que el ï¿½tem tiene un secreto y que no ha sido revelado previamente
         if (currentInspectedItem != null && currentInspectedItem.tieneSecreto && !secretHasBeenFound) {
 
-            //marcar el ítem como inspeccionado en el inventario para guardar el estado
+            //marcar el ï¿½tem como inspeccionado en el inventario para guardar el estado
             secretHasBeenFound = true; // Actualiza el estado local
 
-            //añadir el ítem revelado al inventario si existe
+            //aï¿½adir el ï¿½tem revelado al inventario si existe
             if (currentInspectedItem.RevealedItemData != null) {
                 Inventario.Instance.AddItem(currentInspectedItem.RevealedItemData);
 
-                Debug.Log($"Secreto revelado. Ítem añadido: {currentInspectedItem.RevealedItemData.ItemName}");
+                Debug.Log($"Secreto revelado. ï¿½tem aï¿½adido: {currentInspectedItem.RevealedItemData.ItemName}");
             }
 
             // actualizar la UI para reflejar el cambio
@@ -92,7 +95,7 @@ public class InspeccionManager : MonoBehaviour {
 
         shouldBeActive = false;
 
-        // reactivar el inventario si estaba abierto antes de la inspección
+        // reactivar el inventario si estaba abierto antes de la inspecciï¿½n
         if (Inventario.Instance != null) {
 
 
@@ -108,12 +111,12 @@ public class InspeccionManager : MonoBehaviour {
     }
 
     private System.Collections.IEnumerator TimerToClosePanel(float duration) {
-        Debug.Log($"El panel de inspección se cerrará automáticamente en {duration} segundos.");
+        Debug.Log($"El panel de inspecciï¿½n se cerrarï¿½ automï¿½ticamente en {duration} segundos.");
 
         // Espera el tiempo especificado (5 segundos)
         yield return new WaitForSeconds(duration);
 
-        // Después de esperar, llama a la función de cierre
+        // Despuï¿½s de esperar, llama a la funciï¿½n de cierre
         StopInspection();
     }
 }
