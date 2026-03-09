@@ -1,5 +1,17 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<<< HEAD:Assets/Sprites/Props/pintalabios pero pincha 1.png.meta
 guid: 504bf726df192b449a0eaf8163ff496a
+========
+<<<<<<< HEAD
+guid: 11f0f9289dfe34a4fae404175e24ef62
+=======
+guid: 16bd0b240341f3c4b8a2684513772b66
+>>>>>>> 10/12
+>>>>>>>> 998451dad077bfbe3afa4da851f744ad535d8fa7:Assets/Sprites/Props/pintalabios pero pincha.png.meta
+=======
+guid: 504bf726df192b449a0eaf8163ff496a
+>>>>>>> 998451dad077bfbe3afa4da851f744ad535d8fa7
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -57,7 +69,11 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
+<<<<<<< HEAD
   textureType: 8
+=======
+  textureType: 7
+>>>>>>> 998451dad077bfbe3afa4da851f744ad535d8fa7
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1

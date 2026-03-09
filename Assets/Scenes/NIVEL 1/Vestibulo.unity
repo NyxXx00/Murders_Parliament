@@ -530,8 +530,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+<<<<<<< HEAD
   - {fileID: 992537642}
   - {fileID: 1136270729}
+=======
+  - {fileID: 1136270729}
+  - {fileID: 992537642}
+>>>>>>> 998451dad077bfbe3afa4da851f744ad535d8fa7
   m_Father: {fileID: 1152835762}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1644,7 +1649,11 @@ GameObject:
   - component: {fileID: 978163970}
   - component: {fileID: 978163973}
   m_Layer: 0
+<<<<<<< HEAD
   m_Name: Doctora
+=======
+  m_Name: Doctora_MsP_SinFondo_0
+>>>>>>> 998451dad077bfbe3afa4da851f744ad535d8fa7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1780,7 +1789,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemToGive: {fileID: 11400000, guid: 4206ebf86d580914f886fedac49a8472, type: 2}
   quantity: 1
+<<<<<<< HEAD
   taskID: 1
+=======
+>>>>>>> 998451dad077bfbe3afa4da851f744ad535d8fa7
 --- !u!1 &992537641
 GameObject:
   m_ObjectHideFlags: 0
@@ -2285,7 +2297,11 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+<<<<<<< HEAD
     m_DisabledColor: {r: 0, g: 0, b: 0, a: 0.7764706}
+=======
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+>>>>>>> 998451dad077bfbe3afa4da851f744ad535d8fa7
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:

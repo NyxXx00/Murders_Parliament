@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Sprites/Props/relojvacio.png.meta
 guid: 024029e3b91a4234494bb5414a668bea
+========
+<<<<<<< HEAD
+guid: dacc65d2393aac74c909fa52bcc33f99
+=======
+guid: faf49716593e341499d2a726ad5449f8
+>>>>>>> 10/12
+>>>>>>>> 998451dad077bfbe3afa4da851f744ad535d8fa7:Assets/Sprites/Props/destiladora.png.meta
 TextureImporter:
   internalIDToNameTable:
   - first:

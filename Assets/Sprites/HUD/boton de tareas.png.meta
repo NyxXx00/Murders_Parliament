@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Sprites/HUD/boton de tareas.png.meta
 guid: faeb750530a1044409557faf2297bce1
+========
+<<<<<<< HEAD
+guid: b61287a830919354ebd933456a36d1dc
+=======
+guid: d3754f2d9c9d4014e9f1aba02243abd2
+>>>>>>> 10/12
+>>>>>>>> 998451dad077bfbe3afa4da851f744ad535d8fa7:Assets/Sprites/Props/maleta -1 pill.png.meta
 TextureImporter:
   internalIDToNameTable:
   - first:

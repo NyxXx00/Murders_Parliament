@@ -39,7 +39,11 @@ public class PlayerControl : MonoBehaviour {
 
     private void OnDisable() {
         if (inputActions != null) {
+<<<<<<< HEAD
             // Deshabilita la acciï¿½n cuando el objeto se deshabilita
+=======
+            // Deshabilita la acción cuando el objeto se deshabilita
+>>>>>>> 998451dad077bfbe3afa4da851f744ad535d8fa7
             inputActions.Player.Move.Disable();
         }
     }

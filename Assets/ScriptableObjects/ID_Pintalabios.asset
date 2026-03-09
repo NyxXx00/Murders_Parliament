@@ -15,8 +15,13 @@ MonoBehaviour:
   ItemID: LipstickSyringe
   ItemName: Pintalabios
   Description: 
+<<<<<<< HEAD
   icon: {fileID: -7165948434570489881, guid: b5f71a57c9e9e004d957c1621f1ec324, type: 3}
   cursorTexture: {fileID: 2800000, guid: 374df213500709c478a786ed2b09f006, type: 3}
+=======
+  icon: {fileID: -2765999091853018710, guid: 8a545e583f6faf14bbd603700d76422e, type: 3}
+  cursorTexture: {fileID: 2800000, guid: cdcb46d2347e104448b9958bc3f55703, type: 3}
+>>>>>>> 998451dad077bfbe3afa4da851f744ad535d8fa7
   tieneSecreto: 1
   RevealedItemData: {fileID: 11400000, guid: a4e4506c0d04c2c4ba0b7bffd6b0c3cc, type: 2}
   SecretPrompt: Tiene una jeringuilla dentro!!

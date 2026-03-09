@@ -15,8 +15,13 @@ MonoBehaviour:
   ItemID: 
   ItemName: 
   Description: 
+<<<<<<< HEAD
   icon: {fileID: -4520703849311479764, guid: 504bf726df192b449a0eaf8163ff496a, type: 3}
   cursorTexture: {fileID: 2800000, guid: 11f0f9289dfe34a4fae404175e24ef62, type: 3}
+=======
+  icon: {fileID: -4520703849311479764, guid: 16bd0b240341f3c4b8a2684513772b66, type: 3}
+  cursorTexture: {fileID: 0}
+>>>>>>> 998451dad077bfbe3afa4da851f744ad535d8fa7
   tieneSecreto: 1
   RevealedItemData: {fileID: 0}
   SecretPrompt: Hay algo raro con este objeto...

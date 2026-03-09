@@ -1,10 +1,19 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Sprites/Props/capsula 1.png.meta
 guid: 66c16fcf8fbeb04409e4225fb5445b14
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -5992761392973993716
     second: capsula_0
+========
+guid: cdcb46d2347e104448b9958bc3f55703
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2765999091853018710
+    second: pintalabios_0
+>>>>>>>> 998451dad077bfbe3afa4da851f744ad535d8fa7:Assets/Sprites/PropsAntiguos/Pintalabios 1.png.meta
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,6 +109,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+<<<<<<<< HEAD:Assets/Sprites/Props/capsula 1.png.meta
       name: capsula_0
       rect:
         serializedVersion: 2
@@ -107,6 +117,15 @@ TextureImporter:
         y: 303
         width: 587
         height: 445
+========
+      name: pintalabios_0
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 99
+        width: 213
+        height: 789
+>>>>>>>> 998451dad077bfbe3afa4da851f744ad535d8fa7:Assets/Sprites/PropsAntiguos/Pintalabios 1.png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +134,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
+<<<<<<<< HEAD:Assets/Sprites/Props/capsula 1.png.meta
       spriteID: c092c1c934f65dca0800000000000000
       internalID: -5992761392973993716
+========
+      spriteID: aa93c091b723d99d0800000000000000
+      internalID: -2765999091853018710
+>>>>>>>> 998451dad077bfbe3afa4da851f744ad535d8fa7:Assets/Sprites/PropsAntiguos/Pintalabios 1.png.meta
       vertices: []
       indices: 
       edges: []
@@ -135,7 +159,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+<<<<<<<< HEAD:Assets/Sprites/Props/capsula 1.png.meta
       capsula_0: -5992761392973993716
+========
+      pintalabios_0: -2765999091853018710
+>>>>>>>> 998451dad077bfbe3afa4da851f744ad535d8fa7:Assets/Sprites/PropsAntiguos/Pintalabios 1.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

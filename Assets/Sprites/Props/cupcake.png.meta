@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Sprites/Props/cupcake.png.meta
 guid: 24e95465717d41f44a5e738c8a6be174
+========
+<<<<<<< HEAD
+guid: b477b2fada6024c4a88a2d4fa8a25636
+=======
+guid: 1481a9e5b731ee74c850116aa5603b68
+>>>>>>> 10/12
+>>>>>>>> 998451dad077bfbe3afa4da851f744ad535d8fa7:Assets/Sprites/Props/maletin.png.meta
 TextureImporter:
   internalIDToNameTable:
   - first:

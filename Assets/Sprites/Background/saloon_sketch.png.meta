@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Sprites/Background/saloon_sketch.png.meta
 guid: 3d4f4c5f560120c4e893cd3fee067027
+========
+<<<<<<< HEAD
+guid: 0f8d9a1be0e296e43b1ae00477aa15fd
+=======
+guid: 631a43204aeb5d5438d7529b2e003267
+>>>>>>> 10/12
+>>>>>>>> 998451dad077bfbe3afa4da851f744ad535d8fa7:Assets/Sprites/Props/maleta pill.png.meta
 TextureImporter:
   internalIDToNameTable:
   - first:
