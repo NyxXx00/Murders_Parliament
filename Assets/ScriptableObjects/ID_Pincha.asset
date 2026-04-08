@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db04b7a84f8dfb4aa71453297f95fff, type: 3}
+  m_Name: ID_Pincha
+  m_EditorClassIdentifier: 
+  ItemID: ID_Pincha
+  ItemName: Pincha
+  Description: 
+  icon: {fileID: 4453398548189731320, guid: a619424d80af4384db8473b3c6013109, type: 3}
+  cursorTexture: {fileID: 2800000, guid: ab7a3e75badb145429b56232cef839eb, type: 3}
+  tieneSecreto: 0
+  RevealedItemData: {fileID: 0}
+  SecretPrompt: Hay algo raro con este objeto...
+  RevealedDescription: 

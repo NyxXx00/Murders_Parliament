@@ -8,21 +8,33 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MenuInicial.unity
     guid: ff58923c3aab3ac488ff23655a32b851
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Animacion.unity
     guid: 71a958fdf6582724ca4cdf5e92f3d12f
   - enabled: 1
     path: Assets/Scenes/NIVEL 1/Vestibulo.unity
     guid: 26dd657c2f436df47acb550acc7c21cf
   - enabled: 1
-    path: Assets/Scenes/NIVEL 1/Pasillo_Baile.unity
+    path: "Assets/Scenes/NIVEL 1/Pasillo_Hall_Ba\xF1o.unity"
     guid: 53d3390bf0817d34fb4a1cd9fd3d5ec3
+  - enabled: 1
+    path: "Assets/Scenes/NIVEL 1/Pasillo_Ba\xF1o.unity"
+    guid: f37a3403479a56442820fbbeddbe66ad
   - enabled: 1
     path: "Assets/Scenes/NIVEL 1/Ba\xF1o.unity"
     guid: 109fa938abcc2674fbee16db98be693c
   - enabled: 1
+    path: Assets/Scenes/NIVEL 1/Pasillo_Hall_Cocina.unity
+    guid: 94c8cef8f9ee2654d82e10bb92d807f3
+  - enabled: 1
+    path: Assets/Scenes/NIVEL 1/Pasillo_Cocina.unity
+    guid: 624059a818f7339428c6c881e696a1f4
+  - enabled: 1
     path: Assets/Scenes/NIVEL 1/Cocina.unity
     guid: 9a16e1356cc90ee44b75118384dc1608
+  - enabled: 1
+    path: Assets/Scenes/NIVEL 1/Salon_Baile.unity
+    guid: 9efa2d66566365b449eb6b880ebb253d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

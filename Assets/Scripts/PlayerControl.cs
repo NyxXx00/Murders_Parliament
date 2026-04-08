@@ -8,11 +8,9 @@ public class PlayerControl : MonoBehaviour {
     public InputSystem_Actions inputActions;
 
     private Rigidbody2D rbody;
-    // Almacena la entrada del jugador
     private Vector2 moveInput;
 
     private void Awake() {
-        //  Evitar duplicados
         if (instance != null && instance != this) {
             Destroy(gameObject);
             return;
@@ -39,21 +37,25 @@ public class PlayerControl : MonoBehaviour {
 
     private void OnDisable() {
         if (inputActions != null) {
-<<<<<<< HEAD
-            // Deshabilita la acciï¿½n cuando el objeto se deshabilita
-=======
-            // Deshabilita la acción cuando el objeto se deshabilita
->>>>>>> 998451dad077bfbe3afa4da851f744ad535d8fa7
             inputActions.Player.Move.Disable();
         }
     }
 
     void FixedUpdate() {
-        Vector2 currentPos = rbody.position;
-        Vector2 inputVector = Vector2.ClampMagnitude(moveInput, 1);
-        Vector2 movement = inputVector * movementSpeed * Time.fixedDeltaTime;
-        Vector2 newPos = currentPos + movement;
+        if (Inventario.Instance != null && Inventario.Instance.EstaBloqueadoElMovimiento) {
+            return;
+        }
 
-        rbody.MovePosition(newPos);
+        Vector2 inputVector = Vector2.ClampMagnitude(moveInput, 1);
+
+        if (inputVector.sqrMagnitude < 0.01f) return;
+
+        Vector2 isoVector = new Vector2(
+            inputVector.x - inputVector.y,
+            (inputVector.x + inputVector.y) / 2f
+        );
+
+        Vector2 movement = isoVector * movementSpeed * Time.fixedDeltaTime;
+        rbody.MovePosition(rbody.position + movement);
     }
 }

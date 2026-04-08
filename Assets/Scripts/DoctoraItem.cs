@@ -1,40 +1,65 @@
-using UnityEngine;
+    using UnityEngine;
 
-public class DoctoraItem : MonoBehaviour
-{
-    public ItemData itemToGive;   // El objeto que te dará
-    public int quantity = 1;      // cantidad
-<<<<<<< HEAD
+    public class DoctoraItem : MonoBehaviour {
 
-    public string taskID; // ID de la tarea que se marcará como completada al recibir el objeto
-=======
->>>>>>> 998451dad077bfbe3afa4da851f744ad535d8fa7
-    private Inventario inventario;
+    private static DoctoraItem Instance;    
 
-    void Start() {
-        inventario = Inventario.Instance;
-    }
+    public ItemData itemToGive;
+        public int quantity = 1;
+        public string taskID;
 
-    void OnMouseDown()   // Detecta clic sobre el NPC
-    {
-        if (inventario != null) {
+        [Header("Mecánica de Estrés")]
+        public float tiempoLimite = 30f;
+        private float cronometro;
+        private bool retoActivo = false;
+
+        private Inventario inventario;
+
+        void Start() {
+            inventario = Inventario.Instance;
+        }
+
+        void Update() {
+            // Si el reto está activo y no has abierto el maletín, el tiempo corre
+            if (retoActivo && !Maletin.Instance.maletinAbierto) {
+                cronometro -= Time.deltaTime;
+                if (cronometro <= 0) {
+                    Debug.Log("Doctora: ¡Eres muy lento! Me voy a mi laboratorio.");
+                    retoActivo = false;
+                    // Opcional: gameObject.SetActive(false); para que desaparezca
+                }
+            }
+        }
+
+        void OnMouseDown() {
+            // 1. ¿Ya abriste el maletín?
+            if (Maletin.Instance != null && Maletin.Instance.maletinAbierto) {
+                EntregarRecompensa();
+                return;
+            }
+
+            // 2. Si no, te doy la pista y empieza el estrés
+            if (!retoActivo) {
+                Debug.Log("Doctora: ¡Rápido! El código es el año de Basil al revés. ¡TENGO PRISA!");
+                retoActivo = true;
+                cronometro = tiempoLimite;
+            }
+            else {
+                Debug.Log("Doctora: ¡¿A qué esperas?! ¡Faltan " + (int)cronometro + " segundos!");
+            }
+        }
+
+        public void EntregarRecompensa() {
             if (inventario.AddItem(itemToGive, quantity)) {
-                Debug.Log("NPC te dio: " + itemToGive.ItemName);
-<<<<<<< HEAD
+                Debug.Log("Doctora: ¡Al fin! Gracias. Toma la píldora.");
 
-                // COMPLETAR LA TAREA
                 if (TareasManager.Instance != null && taskID != "") {
                     TareasManager.Instance.CompleteTask(taskID);
                 }
-
-=======
->>>>>>> 998451dad077bfbe3afa4da851f744ad535d8fa7
-                //para que te lo dé solo una vez
-                Destroy(this);
+                Destroy(this); // Solo te lo da una vez
             }
             else {
-                Debug.Log("Inventario lleno, no puedes recibir el objeto.");
+                Debug.Log("Inventario lleno.");
             }
         }
     }
-}

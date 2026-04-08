@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Sprites/Props/aceitera.png.meta
-guid: 7db588c3b96992144b9a0608dfcc2f9f
-TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 6227017239865566659
-    second: aceitera_0
-========
-guid: 1758f0ef662291a45bc1245656a397ae
+guid: 77182b36fe1a3bd45acb6c5b6305c568
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: 7121819778050679306
     second: Mesa_0
->>>>>>>> 10/12:Assets/Sprites/Props/Mesa.png.meta
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,23 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-<<<<<<<< HEAD:Assets/Sprites/Props/aceitera.png.meta
-      name: aceitera_0
-      rect:
-        serializedVersion: 2
-        x: 295
-        y: 359
-        width: 188
-        height: 490
-========
       name: Mesa_0
       rect:
         serializedVersion: 2
-        x: 487
-        y: 676
-        width: 645
-        height: 764
->>>>>>>> 10/12:Assets/Sprites/Props/Mesa.png.meta
+        x: 898
+        y: 605
+        width: 433
+        height: 594
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,13 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-<<<<<<<< HEAD:Assets/Sprites/Props/aceitera.png.meta
-      spriteID: 3c5ab60003fca6650800000000000000
-      internalID: 6227017239865566659
-========
       spriteID: a02ef09ea59c5d260800000000000000
       internalID: 7121819778050679306
->>>>>>>> 10/12:Assets/Sprites/Props/Mesa.png.meta
       vertices: []
       indices: 
       edges: []
@@ -159,11 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-<<<<<<<< HEAD:Assets/Sprites/Props/aceitera.png.meta
-      aceitera_0: 6227017239865566659
-========
       Mesa_0: 7121819778050679306
->>>>>>>> 10/12:Assets/Sprites/Props/Mesa.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

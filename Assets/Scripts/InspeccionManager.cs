@@ -6,6 +6,8 @@ public class InspeccionManager : MonoBehaviour {
 
     public static InspeccionManager Instance { get; private set; }
 
+    public bool EstaInspeccionando => inspectionPanel.activeSelf;
+
     [Header("Configuraci�n de UI")]
     public GameObject inspectionPanel;
     public Image itemIconDisplay;
@@ -41,8 +43,10 @@ public class InspeccionManager : MonoBehaviour {
     public void InspectItem(ItemData itemToInspect) {
         currentInspectedItem = itemToInspect;
 
+        // RESETEA ESTO AQUÍ para que cada objeto se evalúe de cero
+        secretHasBeenFound = false;
+
         inspectionPanel.SetActive(true);
-  
         UpdateUI();
 
         shouldBeActive = true;

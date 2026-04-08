@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Inventario : MonoBehaviour {
 
     public static Inventario Instance { get; private set; }
+
+    public bool EstaBloqueadoElMovimiento => estaAbierto || (InspeccionManager.Instance != null && InspeccionManager.Instance.inspectionPanel.activeSelf);
 
     private ItemData ultimoObjetoRecogido = null;
 
@@ -24,6 +24,8 @@ public class Inventario : MonoBehaviour {
 
     [Header("UI de Crafteo")]
     public GameObject panelCrafteo;
+    [Header("UI HUD")]
+    public GameObject contenedorElementosHUD;
 
     public int contadorRanuras = 6;
 
@@ -36,6 +38,10 @@ public class Inventario : MonoBehaviour {
     public bool estaAbiertoUI => estaAbierto;
 
     private List<string> idsItemsInspeccionados = new List<string>();
+
+    // Referencia al HUD
+    [Header("UI HUD")]
+    public GameObject HUD;
 
     public void MarkItemInspected(string itemID) {
         if (!idsItemsInspeccionados.Contains(itemID)) {
@@ -111,6 +117,15 @@ public class Inventario : MonoBehaviour {
     }
 
     public void Update() {
+        if (Input.GetMouseButtonDown(0)) {
+            // Lanzamos un rayo para ver si hay un cuadro debajo
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+            // SI HAY UN CUADRO, "SALIMOS" DE LA FUNCIÓN Y NO ABRIMOS EL INVENTARIO
+            if (hit.collider != null && hit.collider.GetComponent<Cuadros>() != null) {
+                return;
+            }
+        }
     }
 
     public void Toggle() {
@@ -125,11 +140,14 @@ public class Inventario : MonoBehaviour {
             panelCrafteo.SetActive(estaAbierto);
         }
 
+        if (contenedorElementosHUD != null) {
+            contenedorElementosHUD.SetActive(!estaAbierto);
+        }
+
         if (estaAbierto) {
             UpdateAllSlotUI();
         }
         else {
-           
             ultimoObjetoRecogido = null;
         }
 
@@ -176,19 +194,20 @@ public class Inventario : MonoBehaviour {
     public void AttemptInspect(int indice) {
         ItemData itemAInspeccionar = ranuras[indice].itemData;
 
-        if (itemAInspeccionar != null && InspeccionManager.Instance != null) {
-            DeselectItem();
+        if (itemAInspeccionar != null) {
+            // quitamos el Highlight para siempre de este objeto
+            itemAInspeccionar.inspeccionado = true;
 
-            MarkItemInspected(itemAInspeccionar.ItemID);
+            // refrescamos la UI del inventario inmediatamente
+            UpdateAllSlotUI();
 
-            panelInventario.gameObject.SetActive(false);
-            contenedorItems.gameObject.SetActive(false);
-
-            if (panelCrafteo != null) {
-                panelCrafteo.SetActive(false);
+            // abrimos la visualización
+            // Aquí llamas a tu sistema de mostrar la imagen en grande
+            if (InspeccionManager.Instance != null) {
+                InspeccionManager.Instance.InspectItem(itemAInspeccionar);
             }
 
-            InspeccionManager.Instance.InspectItem(itemAInspeccionar);
+            Debug.Log("Inspeccionando objeto 2D: " + itemAInspeccionar.ItemName);
         }
     }
 
@@ -282,30 +301,26 @@ public class Inventario : MonoBehaviour {
         public void ActualizarUI(bool esRecienRecogido) {
             bool tieneItem = itemData != null;
 
+            // mostrar/ocultar el icono del item
             if (icono != null) {
                 icono.enabled = tieneItem;
                 icono.sprite = itemData?.icon;
             }
 
-            bool mostrarResalteSecreto = false;
-
-            if (tieneItem && itemData.tieneSecreto) {
-                if (Inventario.Instance != null &&
-                    !Inventario.Instance.HasItemBeenInspected(itemData.ItemID)) {
-                    mostrarResalteSecreto = true;
-                }
+            // l del Highlight (Solo para inspección)
+            if (resalteSecreto != null) {
+                // Solo se activa si: hay item Y tiene secreto Y NO ha sido inspeccionado
+                bool debeMostrar = tieneItem && itemData.tieneSecreto && !itemData.inspeccionado;
+                resalteSecreto.enabled = debeMostrar;
             }
 
+            // el resalte de selección
             if (resalteSeleccion != null) {
-                if (resalteSeleccion.enabled) {
-                    if (resalteSecreto != null) resalteSecreto.enabled = false;
+                // Si el objeto está seleccionado, apagamos el highlight de inspección 
+                // para que no se solapen visualmente
+                if (resalteSeleccion.enabled && resalteSecreto != null) {
+                    resalteSecreto.enabled = false;
                 }
-                else {
-                    if (resalteSecreto != null) resalteSecreto.enabled = mostrarResalteSecreto;
-                }
-            }
-            else if (resalteSecreto != null) {
-                resalteSecreto.enabled = mostrarResalteSecreto;
             }
         }
 

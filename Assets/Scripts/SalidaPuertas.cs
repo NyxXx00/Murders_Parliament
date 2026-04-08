@@ -4,30 +4,54 @@ using UnityEngine.SceneManagement;
 public class SalidaPuertas : MonoBehaviour {
 
     [Header("Configuración de Escena")]
-    // Nombre de la escena de destino
     public string nextSceneName;
-
-    // Id del punto donde debe aparecer el jugador en la escena de destino
     public string destinationPointID;
 
-    // Detecta colisiones con el jugador
+    [Header("Configuración de Llave (Opcional)")]
+    [Tooltip("Si dejas esto vacío, la puerta se abrirá siempre. Si pones un ID, necesitará la llave.")]
+    public string idLlaveRequerida;
+
+    [Tooltip("Diálogo que saldrá si no tienes la llave")]
+    public DialogueTrigger triggerBloqueado;
+
     private void OnTriggerEnter2D(Collider2D other) {
-        // Verifica si el objeto que tocó la puerta tiene el tag "Player"
         if (other.CompareTag("Player")) {
-            // Si es el jugador, ejecuta la lógica de cambio de escena
-            ChangeScene();
+            //si no requiere llave, pasa directamente
+            if (string.IsNullOrEmpty(idLlaveRequerida)) {
+                ChangeScene();
+            }
+            // si requiere llave, comprobamos qué tiene seleccionado el jugador
+            else {
+                // Comprobamos si el item SELECCIONADO actualmente es el correcto
+                if (Inventario.Instance != null &&
+                    Inventario.Instance.DatosItemSeleccionado != null &&
+                    Inventario.Instance.DatosItemSeleccionado.ItemID == idLlaveRequerida) {
+
+                    Debug.Log("Uso de llave correcto.");
+
+                    //eliminar la llave tras usarla para que no pueda entrar más o se gaste
+                    Inventario.Instance.RemoveItem(idLlaveRequerida);
+
+                    ChangeScene();
+                }
+                else {
+                    // si no tiene nada seleccionado o es el objeto equivocado
+                    Debug.Log("La puerta no cede. Quizás si selecciono la llave adecuada...");
+
+                    if (triggerBloqueado != null) {
+                        triggerBloqueado.TriggerDialogue();
+                    }
+                }
+            }
         }
     }
 
     public void ChangeScene() {
-        //Guarda la id del punto de spawn para la escena de destino
         if (GameManager.Instance != null) {
             GameManager.Instance.SetNextSpawnPoint(destinationPointID);
         }
 
-        //Carga la escena de destino
         SceneManager.LoadScene(nextSceneName);
-
         Debug.Log($"Cambiando a escena: {nextSceneName}. Spawn ID guardado: {destinationPointID}");
     }
 }

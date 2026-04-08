@@ -15,12 +15,8 @@ MonoBehaviour:
   ItemID: GelatinCapsule
   ItemName: "C\xE1psula de Gelatina"
   Description: 
-  icon: {fileID: -5992761392973993716, guid: 3ab3f2bef929a084aabf4fed189be22c, type: 3}
-<<<<<<< HEAD
-  cursorTexture: {fileID: 2800000, guid: 40d893ef6f117f74cba4d7dc0b6d36ea, type: 3}
-=======
-  cursorTexture: {fileID: 2800000, guid: 66c16fcf8fbeb04409e4225fb5445b14, type: 3}
->>>>>>> 998451dad077bfbe3afa4da851f744ad535d8fa7
+  icon: {fileID: -1955548091497624513, guid: 60a542196e67bf24e97141b056800701, type: 3}
+  cursorTexture: {fileID: 2800000, guid: 4180a7da6fbab6b479fd6753c4adec97, type: 3}
   tieneSecreto: 0
   RevealedItemData: {fileID: 0}
   SecretPrompt: Hay algo raro con este objeto...

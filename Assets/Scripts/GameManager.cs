@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,21 +8,51 @@ public class GameManager : MonoBehaviour {
 
     private Inventario inventario;
 
-    private void Start() {
-        inventario = Inventario.Instance;
-        if (inventario == null) {
-            Debug.LogError("GameManager: No se encontró la instancia del Inventario.");
+    // Almacena el id del punto de la última puerta que cruzó el jugador
+    private string nextSpawnPointID;
+
+    public bool cupcakeEnvenenado = false;
+    public bool tieneAceite = false;
+    public bool pasilloSaboteado = false;
+    public bool jarronRoto = false;
+
+    // Guardamos los IDs de los objetos ya recogidos
+    private HashSet<string> pickedUpItems = new HashSet<string>();
+
+    private void Awake() {
+        if (Instance != null && Instance != this) {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    // Metodo para registrar que un objeto ha sido recogido
+    public void RegisterPickup(string id) {
+        if (!string.IsNullOrEmpty(id) && !pickedUpItems.Contains(id)) {
+            pickedUpItems.Add(id);
         }
     }
 
+    // Metodo para consultar si un objeto ya fue recogido antes
+    public bool IsItemPickedUp(string id) {
+        return pickedUpItems.Contains(id);
+    }
+
+    private void Start() {
+        // Buscamos el inventario al iniciar
+        inventario = Inventario.Instance;
+    }
+
     void Update() {
-
-        //comprobacion de tecla para abrir inventario
         if (Input.GetKeyDown(KeyCode.E)) {
-            Debug.Log("Tecla 'E' detectada. Toggle Inventario.");
-
             if (inventario != null) {
-                inventario.Toggle(); // Llama a la función de apertura/cierre del Inventario.
+                inventario.Toggle();
+            }
+            else {
+                // Re-intentamos buscarlo si por alguna razón se perdió la referencia
+                inventario = Inventario.Instance;
             }
         }
     }
@@ -34,23 +65,6 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene("MainMenu");
     }
 
-    // Almacena el id del punto de la última puerta que cruzó el jugador
-    private string nextSpawnPointID;
-
-    private void Awake() {
-        //Singleton
-        if (Instance != null && Instance != this) {
-            // Si ya existe una instancia, destruye este nuevo objeto
-            Destroy(gameObject);
-            return;
-        }
-
-        //Asigna esta instancia como la única instancia activa.
-        Instance = this;
-
-        //Evita que el objeto se destruya al cargar una nueva escena.
-        DontDestroyOnLoad(gameObject);
-    }
 
     // Llamada por el script de la puerta de salida para guardar la ID.
     public void SetNextSpawnPoint(string spawnID) {

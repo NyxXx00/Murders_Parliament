@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db04b7a84f8dfb4aa71453297f95fff, type: 3}
+  m_Name: ID_CuadroE
+  m_EditorClassIdentifier: 
+  ItemID: ID_CuadroE
+  ItemName: Cuadro E
+  Description: 
+  icon: {fileID: -3353845065150320848, guid: c5db04ef31cffb9459e4526cb9ae8ca7, type: 3}
+  cursorTexture: {fileID: 0}
+  tieneSecreto: 1
+  inspeccionado: 0
+  RevealedItemData: {fileID: 0}
+  SecretPrompt: "En el reverso se lee una inscripci\xF3n antigua: \"II\"."
+  RevealedDescription: 

@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 2217bb2602bd944469682b79e23febc3
+guid: 09359051b5f44f94992a6eff8e924f04
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6227017239865566659
-    second: aceitera_0
+      213: -3741096142628590794
+    second: Aceitera_0
+  - first:
+      213: 3944532347908399466
+    second: Aceitera_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: aceitera_0
+      name: Aceitera_0
       rect:
         serializedVersion: 2
-        x: 295
-        y: 359
-        width: 188
-        height: 490
+        x: 534
+        y: 716
+        width: 192
+        height: 495
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3c5ab60003fca6650800000000000000
-      internalID: 6227017239865566659
+      spriteID: 63be90421e4f41cc0800000000000000
+      internalID: -3741096142628590794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aceitera_1
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 1002
+        width: 184
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a612e1a754bcdb630800000000000000
+      internalID: 3944532347908399466
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      aceitera_0: 6227017239865566659
+      Aceitera_0: -3741096142628590794
+      Aceitera_1: 3944532347908399466
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

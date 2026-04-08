@@ -15,6 +15,8 @@ public class ItemData : ScriptableObject {
     [Header("Mecánica de Inspección")]
     public bool tieneSecreto = false;
 
+    public bool inspeccionado = false;
+
     // secreto
     public ItemData RevealedItemData;
 
@@ -25,4 +27,9 @@ public class ItemData : ScriptableObject {
     //descripción que se muestra despues de la inspección.
     [TextArea(3, 5)]
     public string RevealedDescription;
+
+    public void OnEnable() {
+        // Asegurarse de que el estado de inspección se restablezca al cargar el juego o al reiniciar la escena
+        inspeccionado = false;
+    }
 }

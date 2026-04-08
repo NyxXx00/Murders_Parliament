@@ -8,6 +8,7 @@ public class InventarioCursor : MonoBehaviour {
     [Header("Configuración")]
     // Textura de cursor predeterminada 
     public Texture2D texturaCursorBase;
+    public Texture2D texturaCursorSecreto;
 
     // Ajusta el hotspot según el tamaño final de tu cursor
     public Vector2 hotspot = new Vector2(32, 32);
@@ -26,6 +27,18 @@ public class InventarioCursor : MonoBehaviour {
         VolverACursorBase();
 
     }
+    public void ActivarCursorDuda() {
+        if (itemSeleccionado == null) { // Solo si no estamos arrastrando un item ya
+            Cursor.SetCursor(texturaCursorSecreto, hotspot, CursorMode.Auto);
+        }
+    }
+
+    public void DesactivarCursorDuda() {
+        if (itemSeleccionado == null) {
+            VolverACursorBase();
+        }
+    }
+
 
     // Establece el ítem en el cursor y cambia la textura.
     public void SeleccionarItem(ItemData item) {

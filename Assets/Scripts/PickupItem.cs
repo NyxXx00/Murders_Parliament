@@ -5,18 +5,26 @@ public class PickupItem : MonoBehaviour {
     public ItemData itemData;
     public int quantity = 1;
 
+    [Header("Persistencia")]
+    public string uniqueID;
+
     // Bandera para saber si el jugador está en rango de clic
     private bool canBePickedUp = false;
 
     // ID de la tarea que se marcará como completada al recibir el objeto
-    public string taskID; 
+    public string taskID;
 
     // Referencia al inventario
     private Inventario inventario;
 
     void Start() {
-        // Asegúrate de obtener la instancia del inventario al inicio
         inventario = Inventario.Instance;
+
+        // Si el ID ya está registrado como completado/recogido, eliminamos el objeto
+        if (GameManager.Instance != null && GameManager.Instance.IsItemPickedUp(uniqueID)) {
+            Destroy(gameObject);
+            return;
+        }
     }
 
     void Update() {
@@ -43,18 +51,22 @@ public class PickupItem : MonoBehaviour {
 
     private void TryPickup() {
         if (inventario != null) {
-
-            //Intenta añadir el objeto
             if (inventario.AddItem(itemData, quantity)) {
 
-                Debug.Log("Objeto recogido con Clic: " + itemData.ItemName);
+                Debug.Log("Objeto recogido: " + itemData.ItemName);
 
-                // COMPLETAR LA TAREA
-                if (TareasManager.Instance != null && taskID != "") {
+                if (GameManager.Instance != null && !string.IsNullOrEmpty(uniqueID)) {
+                    GameManager.Instance.RegisterPickup(uniqueID);
+                }
+
+                if (itemData.ItemName == "ID_Aceitera") {
+                    GameManager.Instance.tieneAceite = true;
+                }
+
+                if (TareasManager.Instance != null && !string.IsNullOrEmpty(taskID)) {
                     TareasManager.Instance.CompleteTask(taskID);
                 }
 
-                //destruye el objeto del mundo
                 canBePickedUp = false;
                 Destroy(gameObject);
             }
