@@ -34,24 +34,23 @@ public class DialogueTrigger : MonoBehaviour {
     public void TriggerDialogue() {
         if (DialogueManager.Instance == null) return;
 
-        // 1. Si ya se cumplió el objetivo (ej: maletín abierto, llave entregada...)
         if (objetivoCumplido) {
             DialogueManager.Instance.StartDialogue(dialogoFinalizado);
         }
-        // 2. Si es la primera vez que hablamos
         else if (!hasTriggered) {
             DialogueManager.Instance.StartDialogue(dialogoInicial);
             hasTriggered = true;
         }
-        // 3. Si ya hablamos pero aún no cumple el objetivo
         else {
             DialogueManager.Instance.StartDialogue(dialogoProgreso);
         }
     }
 
+    /*
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Player")) {
             TriggerDialogue();
         }
-    }
+    } 
+    */
 }

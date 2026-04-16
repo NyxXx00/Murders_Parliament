@@ -500,7 +500,7 @@ MonoBehaviour:
   itemData: {fileID: 11400000, guid: 360416e8319bde44fa5300685b21e9b4, type: 2}
   quantity: 1
   uniqueID: ID_Pintalabios
-  taskID: 2
+  taskID: 4
 --- !u!70 &1414970581
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -620,31 +620,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df5a9f58bc322843904d883b2ed7c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    dialogueLines:
-    - character:
-        name: <i>Elvira (Pensamiento)</i>
-        icon: {fileID: 21300000, guid: 609b6dd389d84484f8c1569725c124fd, type: 3}
-      line: "<i>Vaya, vaya... Alguna nena descuidada dej\xF3 su labial aqu\xED junto
-        al grifo.</i>"
-    - character:
-        name: <i>Elvira (Pensamiento)</i>
-        icon: {fileID: 21300000, guid: 609b6dd389d84484f8c1569725c124fd, type: 3}
-      line: "<i>Qu\xE9 tono tan atrevido... [Lo toma entre sus dedos].</i>"
-    - character:
-        name: <i>Elvira (Pensamiento)</i>
-        icon: {fileID: 21300000, guid: 609b6dd389d84484f8c1569725c124fd, type: 3}
-      line: "<i>Espera... Pesa demasiado. Mucho m\xE1s de lo que deber\xEDa pesar
-        un simple tubo de rouge.</i>"
-    - character:
-        name: <i>Elvira (Pensamiento)</i>
-        icon: {fileID: 21300000, guid: 609b6dd389d84484f8c1569725c124fd, type: 3}
-      line: "<i>Me lo llevar\xE9. Si su due\xF1a aparece, se lo devolver\xE9... y
-        si no, es un bonito recuerdo de esta noche.</i>"
-    - character:
-        name: <i><b>Sistema</b></i>
-        icon: {fileID: 5942924935586280262, guid: 37e884a414bde474dbf660cd0093d933, type: 3}
-      line: "<i>Pintalabios misterioso a\xF1adido al Inventario.</i>"
+  dialogoInicial:
+    dialogueLines: []
+  dialogoProgreso:
+    dialogueLines: []
+  dialogoFinalizado:
+    dialogueLines: []
+  objetivoCumplido: 0
 --- !u!1 &1660348961
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,6 +706,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextSceneName: "Pasillo_Ba\xF1o"
   destinationPointID: "salidaBa\xF1o"
+  idLlaveRequerida: 
+  triggerBloqueado: {fileID: 0}
 --- !u!212 &1660348964
 SpriteRenderer:
   m_ObjectHideFlags: 0

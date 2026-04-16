@@ -3,7 +3,7 @@ using UnityEngine;
 public class Cupcake : MonoBehaviour {
 
     // ID de la tarea que se marcará como completada al recibir el objeto
-    public string taskID;
+    public int taskID;
 
     [Header("Configuración")]
     public ItemData objetoNeceserio; // Arrastra aquí el ItemData de la receta
@@ -39,7 +39,7 @@ public class Cupcake : MonoBehaviour {
         Inventario.Instance.DeselectItem();
 
         // COMPLETAR LA TAREA
-        if (TareasManager.Instance != null && taskID != "") {
+        if (TareasManager.Instance != null && taskID != 0) {
             TareasManager.Instance.CompleteTask(taskID);
         }
 

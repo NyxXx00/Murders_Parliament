@@ -1,11 +1,12 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 
 public class OsoBorracho : MonoBehaviour {
     [Header("Referencias")]
     public Transform posicionMesaAmigo;
     public PuzzleVaso scriptVaso;
-    public Dialogue pensamientoProtagonista; // El diálogo de ella hablando sola
+    public Dialogue pensamientoProtagonista;
+    public int taskID;
 
     [Header("Configuración")]
     public float velocidad = 1.5f;
@@ -33,19 +34,19 @@ public class OsoBorracho : MonoBehaviour {
     }
 
     IEnumerator SecuenciaOsoYProtagonista() {
-        // 1. EL OSO CAMINA...
+
+        if (TareasManager.Instance != null && taskID != 0) {
+            TareasManager.Instance.CompleteTask(taskID);
+        }
         while (Vector2.Distance(transform.position, posicionMesaAmigo.position) > 0.1f) {
             transform.position = Vector2.MoveTowards(transform.position, posicionMesaAmigo.position, velocidad * Time.deltaTime);
             yield return null;
         }
 
-        // 2. EL OSO LLEGA Y LIBERA EL VASO
         scriptVaso.PermitirInspeccion();
 
-        // 3. PEQUEÑA PAUSA (Para que no sea instantáneo)
         yield return new WaitForSeconds(0.5f);
 
-        // 4. DISPARAR EL PENSAMIENTO
         if (pensamientoLuegoDeQueSeVa != null) {
             DialogueManager.Instance.StartDialogue(pensamientoLuegoDeQueSeVa);
         }

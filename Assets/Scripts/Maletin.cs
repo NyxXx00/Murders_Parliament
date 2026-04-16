@@ -1,5 +1,5 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class Maletin : MonoBehaviour {
     public static Maletin Instance;
@@ -11,46 +11,35 @@ public class Maletin : MonoBehaviour {
     [Header("Referencias UI")]
     public GameObject panelTeclado;
     public TMP_InputField inputCodigo;
-    public DoctoraItem doctoraScript; // Aquí tienes arrastrada a la Doctora
+    public DoctoraItem doctoraScript;
 
     void Awake() {
         if (Instance == null) Instance = this;
     }
 
     void OnMouseDown() {
-        if (!maletinAbierto) {
-            panelTeclado.SetActive(true);
-            inputCodigo.text = "";
-            inputCodigo.ActivateInputField();
-        }
-        else {
-            Debug.Log("El maletín ya está vacío.");
-        }
-    }
-
-    public void ValidarCodigo() {
-        if (inputCodigo == null) {
-            Debug.LogError("¡Oye! Se te olvidó arrastrar el InputField.");
+        // 1. SEGURO: Si la PLACA está abierta, no abras el maletín
+        if (Placa.Instance != null && Placa.Instance.panelPlaca.activeSelf) {
             return;
         }
 
+        // 2. Si el propio panel del maletín ya está abierto, no hagas nada
+        if (panelTeclado.activeSelf) return;
+
+        if (maletinAbierto) return;
+
+        AbrirPanel();
+    }
+
+    public void ValidarCodigo() {
         if (inputCodigo.text == codigoCorrecto) {
             maletinAbierto = true;
             panelTeclado.SetActive(false);
 
             if (doctoraScript != null) {
-
-                // Buscamos el script de diálogo que está en el mismo objeto que la doctora
                 DialogueTrigger trigger = doctoraScript.GetComponent<DialogueTrigger>();
-                if (trigger != null) {
-                    trigger.objetivoCumplido = true; // <--- AQUÍ se activa el cambio de frase
-                }
-                // ------------------------
-
+                if (trigger != null) trigger.objetivoCumplido = true;
                 doctoraScript.EntregarRecompensa();
-            }
-            else {
-                Debug.LogWarning("Código correcto, pero falta asignar doctoraScript.");
             }
         }
         else {
@@ -61,5 +50,14 @@ public class Maletin : MonoBehaviour {
 
     public void CerrarPanel() {
         panelTeclado.SetActive(false);
+    }
+
+    void AbrirPanel() {
+        panelTeclado.SetActive(true);
+        if (inputCodigo != null) {
+            inputCodigo.text = "";
+            inputCodigo.ActivateInputField();
+        }
+        Debug.Log("Maletín abierto. Ahora el FondoBloqueador protegerá la escena.");
     }
 }

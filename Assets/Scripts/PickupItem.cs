@@ -11,16 +11,15 @@ public class PickupItem : MonoBehaviour {
     // Bandera para saber si el jugador está en rango de clic
     private bool canBePickedUp = false;
 
-    // ID de la tarea que se marcará como completada al recibir el objeto
-    public string taskID;
+    [Header("Tarea Asociada")]
+    // CAMBIO: Ahora usamos int para que coincida con el nuevo TareasManager
+    public int taskID;
 
-    // Referencia al inventario
     private Inventario inventario;
 
     void Start() {
         inventario = Inventario.Instance;
 
-        // Si el ID ya está registrado como completado/recogido, eliminamos el objeto
         if (GameManager.Instance != null && GameManager.Instance.IsItemPickedUp(uniqueID)) {
             Destroy(gameObject);
             return;
@@ -28,21 +27,18 @@ public class PickupItem : MonoBehaviour {
     }
 
     void Update() {
-        //Si el jugador está en rango Y presiona el botón izquierdo del ratón
         if (canBePickedUp && Input.GetMouseButtonDown(0)) {
             TryPickup();
         }
     }
 
-    // El jugador entra en el área de recolección
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             canBePickedUp = true;
-            Debug.Log("Objeto listo para ser recogido con clic.");
+            Debug.Log("Objeto listo: " + itemData.ItemName);
         }
     }
 
-    // El jugador sale del área de recolección
     private void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             canBePickedUp = false;
@@ -55,15 +51,19 @@ public class PickupItem : MonoBehaviour {
 
                 Debug.Log("Objeto recogido: " + itemData.ItemName);
 
+                // Persistencia en el GameManager
                 if (GameManager.Instance != null && !string.IsNullOrEmpty(uniqueID)) {
                     GameManager.Instance.RegisterPickup(uniqueID);
                 }
 
+                // Lógica específica para el aceite
                 if (itemData.ItemName == "ID_Aceitera") {
                     GameManager.Instance.tieneAceite = true;
                 }
 
-                if (TareasManager.Instance != null && !string.IsNullOrEmpty(taskID)) {
+                // LLAMADA AL NUEVO TAREAS MANAGER
+                // Si taskID es 0, podemos asumir que este objeto no completa ninguna tarea
+                if (TareasManager.Instance != null && taskID != 0) {
                     TareasManager.Instance.CompleteTask(taskID);
                 }
 

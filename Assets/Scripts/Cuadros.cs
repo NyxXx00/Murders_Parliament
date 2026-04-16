@@ -3,57 +3,80 @@ using UnityEngine.EventSystems;
 
 public class Cuadros : MonoBehaviour {
     [Header("Configuración")]
-    public ItemData cuadroData; // El item que tiene este marco actualmente
-    public bool estaVacio;      // ¿Hay un cuadro aquí?
+    public ItemData cuadroData;
+    public bool estaVacio;
+    public float distanciaMaxima = 3f;
+
+    [Header("Cursores")]
+    public Texture2D cursorInteractuar;
 
     private SpriteRenderer render;
     private Color colorOriginal;
+    private Transform jugador;
 
     void Awake() {
         render = GetComponent<SpriteRenderer>();
         colorOriginal = render.color;
+        GameObject p = GameObject.FindWithTag("Player");
+        if (p != null) jugador = p.transform;
+    }
+
+    void Start() {
         ActualizarVisual();
     }
 
+    private void OnMouseEnter() {
+        if (cursorInteractuar != null) Cursor.SetCursor(cursorInteractuar, Vector2.zero, CursorMode.Auto);
+    }
+
+    private void OnMouseExit() {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+    }
+
     private void OnMouseDown() {
+
+        if (DatosCuadros.Instance != null && DatosCuadros.Instance.puzzleCompletado) {
+            Debug.Log("El puzzle ya está resuelto, no puedes mover los cuadros.");
+            return;
+        }
         if (EventSystem.current.IsPointerOverGameObject()) return;
 
-        // ACCIÓN A: RECOGER (Si el marco tiene un cuadro)
+        float dist = Vector2.Distance(transform.position, jugador.position);
+        if (dist > distanciaMaxima) return;
+
         if (!estaVacio) {
-            bool seAgrego = Inventario.Instance.AddItem(cuadroData);
-            if (seAgrego) {
+            if (Inventario.Instance.AddItem(cuadroData)) {
                 cuadroData = null;
                 estaVacio = true;
-                ActualizarVisual();
-                PuzzleManager.Instance.ComprobarOrden();
+                FinalizarAccion();
             }
         }
-        // ACCIÓN B: COLOCAR (Si el marco está vacío y hay algo seleccionado en el inventario)
         else {
-            ItemData itemSeleccionado = Inventario.Instance.DatosItemSeleccionado;
-
-            if (itemSeleccionado != null) {
-                // Colocamos el item en este hueco
-                cuadroData = itemSeleccionado;
+            ItemData seleccionado = Inventario.Instance.DatosItemSeleccionado;
+            if (seleccionado != null) {
+                cuadroData = seleccionado;
                 estaVacio = false;
-
-                // Lo eliminamos del inventario usando tu método RemoveItem
-                Inventario.Instance.RemoveItem(itemSeleccionado.ItemID);
-
-                ActualizarVisual();
-                PuzzleManager.Instance.ComprobarOrden();
+                Inventario.Instance.RemoveItem(seleccionado.ItemID);
+                FinalizarAccion();
             }
         }
     }
 
+    void FinalizarAccion() {
+        ActualizarVisual();
+        PuzzleManager.Instance.GuardarEstado(); // Guardamos el cambio para la persistencia
+        PuzzleManager.Instance.ComprobarOrden();
+    }
+
     public void ActualizarVisual() {
+        if (render == null) render = GetComponent<SpriteRenderer>();
+
         if (estaVacio) {
             render.sprite = null;
-            // Opcional: hacer el marco semitransparente para que se vea "hueco"
             render.color = new Color(1, 1, 1, 0.3f);
         }
-        else {
-            render.sprite = cuadroData.icon; // Usamos .icon que es el que tienes en ItemData
+        else if (cuadroData != null) {
+            render.sprite = cuadroData.icon;
             render.color = colorOriginal;
         }
     }

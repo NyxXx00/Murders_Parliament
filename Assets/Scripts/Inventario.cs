@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Inventario : MonoBehaviour {
 
-    public static Inventario Instance { get; private set; }
+    public static Inventario Instance;
 
     public bool EstaBloqueadoElMovimiento => estaAbierto || (InspeccionManager.Instance != null && InspeccionManager.Instance.inspectionPanel.activeSelf);
 
@@ -26,6 +26,10 @@ public class Inventario : MonoBehaviour {
     public GameObject panelCrafteo;
     [Header("UI HUD")]
     public GameObject contenedorElementosHUD;
+
+    [Header("Base de Datos")]
+    [Tooltip("Arrastra aquí todos los ItemData del juego (o al menos los de los cuadros)")]
+    public List<ItemData> baseDeDatosItems = new List<ItemData>();
 
     public int contadorRanuras = 6;
 
@@ -126,6 +130,19 @@ public class Inventario : MonoBehaviour {
                 return;
             }
         }
+    }
+
+    public ItemData GetItemByID(string itemID) {
+        if (string.IsNullOrEmpty(itemID)) return null;
+
+        // Buscamos en la lista maestra de items por su ID
+        ItemData encontrado = baseDeDatosItems.Find(item => item != null && item.ItemID == itemID);
+
+        if (encontrado == null) {
+            Debug.LogWarning("Inventario: No se encontró el ItemData con ID: " + itemID + ". Asegúrate de que esté en la lista 'Base De Datos Items'.");
+        }
+
+        return encontrado;
     }
 
     public void Toggle() {

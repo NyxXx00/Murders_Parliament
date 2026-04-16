@@ -6,6 +6,7 @@ public class PuzzleVaso : MonoBehaviour {
     [Header("Datos del Item")]
     public ItemData vasoData; // El ItemData que tiene el "Manojo de Pelo" como RevealedItemData
     public Sprite vasoLimpioSprite;
+    public int taskID;
 
     [Header("Estado del Puzzle")]
     public bool osoSeHaIdo = false; // Cambia esto a TRUE desde el sistema de diálogos
@@ -37,6 +38,10 @@ public class PuzzleVaso : MonoBehaviour {
 
         // 2. Revelamos el secreto (Añade el Pelo al inventario automáticamente)
         InspeccionManager.Instance.AttemptRevealSecret();
+
+        if (TareasManager.Instance != null && taskID != 0) {
+            TareasManager.Instance.CompleteTask(taskID);
+        }
 
         // 3. Feedback visual en el escenario (Vaso ahora se ve limpio)
         if (vasoLimpioSprite != null) {

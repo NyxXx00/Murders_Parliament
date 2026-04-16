@@ -593,6 +593,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextSceneName: Vestibulo
   destinationPointID: salidaHall_SB
+  idLlaveRequerida: 
+  triggerBloqueado: {fileID: 0}
 --- !u!212 &757826696
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -677,6 +679,7 @@ GameObject:
   - component: {fileID: 954360746}
   - component: {fileID: 954360747}
   - component: {fileID: 954360748}
+  - component: {fileID: 954360749}
   m_Layer: 6
   m_Name: Oso_Chibi_0
   m_TagString: Untagged
@@ -751,7 +754,8 @@ Transform:
   m_LocalPosition: {x: -1.97, y: 0.23, z: 0}
   m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1601890954}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &954360745
@@ -770,6 +774,7 @@ MonoBehaviour:
   scriptVaso: {fileID: 1280265939}
   pensamientoProtagonista:
     dialogueLines: []
+  taskID: 10
   velocidad: 1.5
   pensamientoLuegoDeQueSeVa:
     dialogueLines:
@@ -790,29 +795,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df5a9f58bc322843904d883b2ed7c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    dialogueLines:
-    - character:
-        name: Elvira
-        icon: {fileID: 21300000, guid: 609b6dd389d84484f8c1569725c124fd, type: 3}
-      line: "\xBFEst\xE1s bien? Pareces... alterado."
-    - character:
-        name: Big Bear Romanov
-        icon: {fileID: 1547146456086501955, guid: 59fb5021777d2914085416755ad69238, type: 3}
-      line: "\xBFBien? \xA1Ja! Me prometieron que esta noche ser\xEDa tranquila.
-        Pero luego apareci\xF3 \xE9l... con sus modales de seda y ese pelaje tan...
-        tan... <i>(Se interrumpe y da un trago largo)</i>"
-    - character:
-        name: Big Bear Romanov
-        icon: {fileID: 1547146456086501955, guid: 59fb5021777d2914085416755ad69238, type: 3}
-      line: "<i>(Tose violentamente) </i> \xA1Puaj! Maldita sea, creo que estoy perdiendo
-        pelo de los nervios. Se me queda pegado hasta en el cristal..."
-    - character:
-        name: Elvira
-        icon: {fileID: 21300000, guid: 609b6dd389d84484f8c1569725c124fd, type: 3}
-      line: "No importa. Ahora mismo me importa m\xE1s que mi viejo amigo Barnaby
-        me invite a otra ronda. Est\xE1 en aquella mesa... voy a ver si su billetera
-        es m\xE1s grande que su boca."
+  dialogoInicial:
+    dialogueLines: []
+  dialogoProgreso:
+    dialogueLines: []
+  dialogoFinalizado:
+    dialogueLines: []
+  objetivoCumplido: 0
 --- !u!61 &954360747
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -905,6 +894,97 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 13.72, y: 26.416449}
   m_EdgeRadius: 0
+--- !u!114 &954360749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954360742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bdb6f5ec78f80045ae6657ed4b6648e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconoTecla: {fileID: 1601890950}
+  scriptDialogo: {fileID: 954360746}
+  teclaInteraccion: 32
+  radioDeteccion: 0.5
+--- !u!1 &1144027564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1144027565}
+  - component: {fileID: 1144027567}
+  - component: {fileID: 1144027566}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1144027565
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144027564}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1601890954}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0.149, y: 0.149}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1144027566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144027564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 8832167503239892954, guid: dff9237b6eb9b9d4aa9b12759596f05e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1144027567
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144027564}
+  m_CullTransparentMesh: 1
 --- !u!1 &1280265936
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,6 +1089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vasoData: {fileID: 11400000, guid: 65dbfdf773d46bb4a88737aceb0a3e0b, type: 2}
   vasoLimpioSprite: {fileID: -8348037278118256122, guid: c0797fd0ba6dd6541aec1ae027b954f2, type: 3}
+  taskID: 11
   osoSeHaIdo: 0
 --- !u!61 &1280265940
 BoxCollider2D:
@@ -1068,18 +1149,115 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df5a9f58bc322843904d883b2ed7c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    dialogueLines:
-    - character:
-        name: Big Bear Romanov
-        icon: {fileID: 1547146456086501955, guid: 59fb5021777d2914085416755ad69238, type: 3}
-      line: "<i>(Gru\xF1ido sordo)</i> Eh... busca tu propia miel, colega. Este vaso
-        y yo tenemos una reuni\xF3n privada."
-    - character:
-        name: Big Bear Romanov
-        icon: {fileID: 1547146456086501955, guid: 59fb5021777d2914085416755ad69238, type: 3}
-      line: "Si buscas conversaci\xF3n, habla con la pared. Ella escucha mejor que
-        yo ahora mismo."
+  dialogoInicial:
+    dialogueLines: []
+  dialogoProgreso:
+    dialogueLines: []
+  dialogoFinalizado:
+    dialogueLines: []
+  objetivoCumplido: 0
+--- !u!1 &1601890950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1601890954}
+  - component: {fileID: 1601890953}
+  - component: {fileID: 1601890952}
+  - component: {fileID: 1601890951}
+  m_Layer: 5
+  m_Name: Canvas (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1601890951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601890950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1601890952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601890950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 1
+--- !u!223 &1601890953
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601890950}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &1601890954
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601890950}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 25, y: 25, z: 25}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1144027565}
+  m_Father: {fileID: 954360744}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.1, y: 16.1}
+  m_SizeDelta: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1882920615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,6 +1462,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextSceneName: Jardin
   destinationPointID: salidaSB_J
+  idLlaveRequerida: 
+  triggerBloqueado: {fileID: 0}
 --- !u!212 &2083975848
 SpriteRenderer:
   m_ObjectHideFlags: 0

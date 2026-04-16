@@ -304,6 +304,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cuadroData: {fileID: 11400000, guid: 5625792c2f7ba6147a8736a7eb181148, type: 2}
   estaVacio: 0
+  distanciaMaxima: 3
+  cursorInteractuar: {fileID: 2800000, guid: 7ebedeb4bb26cc44c8318891461efb95, type: 3}
 --- !u!61 &152072571
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -434,6 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e25428cc96252c8488cc7f426b2fbd80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskID: 2
   huecos:
   - {fileID: 431414552}
   - {fileID: 1883010971}
@@ -565,6 +568,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cuadroData: {fileID: 11400000, guid: 49a363f0fe1b7ba419037af757abd06b, type: 2}
   estaVacio: 0
+  distanciaMaxima: 3
+  cursorInteractuar: {fileID: 2800000, guid: 7ebedeb4bb26cc44c8318891461efb95, type: 3}
 --- !u!61 &431414553
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -659,6 +664,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cuadroData: {fileID: 11400000, guid: 1cb9e318d38ea1f43a1108722107f55c, type: 2}
   estaVacio: 0
+  distanciaMaxima: 3
+  cursorInteractuar: {fileID: 2800000, guid: 7ebedeb4bb26cc44c8318891461efb95, type: 3}
 --- !u!61 &435968961
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1084,6 +1091,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cuadroData: {fileID: 11400000, guid: b28f8c9dbf1e585439497a18ac27d221, type: 2}
   estaVacio: 0
+  distanciaMaxima: 3
+  cursorInteractuar: {fileID: 2800000, guid: 7ebedeb4bb26cc44c8318891461efb95, type: 3}
 --- !u!61 &1196109004
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1475,8 +1484,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 6dcdfcf1a0159a74181d612cfdeead5a, type: 2}
   quantity: 1
-  uniqueID: 
-  taskID: 
+  uniqueID: "ID_LlaveBa\xF1o"
+  taskID: 3
 --- !u!61 &1372344828
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1695,6 +1704,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cuadroData: {fileID: 11400000, guid: 04143930ef37f0546ae36f33df270336, type: 2}
   estaVacio: 0
+  distanciaMaxima: 3
+  cursorInteractuar: {fileID: 2800000, guid: 7ebedeb4bb26cc44c8318891461efb95, type: 3}
 --- !u!61 &1883010972
 BoxCollider2D:
   m_ObjectHideFlags: 0

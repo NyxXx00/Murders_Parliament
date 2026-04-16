@@ -1,38 +1,48 @@
+using System.Collections;
 using UnityEngine;
-using System.Collections; // Importante para las Corrutinas
 
 public class Jarron : MonoBehaviour {
-    public Sprite jarronRotoSprite; // Arrastra el sprite de los cristales rotos aquí
-    public GameObject objetoGuardiaAActivar; // Arrastra al Guardia aquí
-    public float segundosDeRetraso = 2.0f; // Tiempo de espera
+    [Header("Sprites")]
+    public Sprite jarronEntero;  // El jarrón sano
+    public Sprite jarronRoto;    // La imagen con todos los trozos juntos
+
+    [Header("Configuración")]
+    public SpriteRenderer render;
+    public GameObject objetoGuardiaAActivar;
+    public float segundosDeRetraso = 2.0f;
+    public int taskID;
+
+    [Header("Sonido")]
+    public AudioClip sonidoRotura;
+    private AudioSource altavoz;
 
     public void Romper() {
-        // 1. Efecto visual inmediato
-        if (jarronRotoSprite != null) {
-            GetComponent<SpriteRenderer>().sprite = jarronRotoSprite;
+
+        if (altavoz != null && sonidoRotura != null) {
+            altavoz.PlayOneShot(sonidoRotura);
         }
 
-        // 2. Avisamos al GameManager para otros eventos
-        if (GameManager.Instance != null) {
-            GameManager.Instance.jarronRoto = true;
+        if (render != null && jarronRoto != null) {
+            render.sprite = jarronRoto;
         }
 
-        // 3. Empezamos la cuenta atrás para el guardia
+        if (GameManager.Instance != null) GameManager.Instance.jarronRoto = true;
+
+        if (TareasManager.Instance != null && taskID != 0) {
+            TareasManager.Instance.CompleteTask(taskID);
+        }
+
         StartCoroutine(EsperarYActivarGuardia());
-        Debug.Log("Jarrón roto. Esperando a que el guardia aparezca.");
+        Debug.Log("Jarrón sustituido por imagen rota. Tarea " + taskID + " completada.");
     }
 
     IEnumerator EsperarYActivarGuardia() {
         yield return new WaitForSeconds(segundosDeRetraso);
-
-        // ¡Aparece el guardia!
         if (objetoGuardiaAActivar != null) {
             objetoGuardiaAActivar.SetActive(true);
-
-            // IMPORTANTE: Le damos la orden directa de moverse
-            Guardia scriptGuardia = objetoGuardiaAActivar.GetComponent<Guardia>();
-            if (scriptGuardia != null) {
-                scriptGuardia.EmpezarAMoverse();
+            Guardia g = objetoGuardiaAActivar.GetComponent<Guardia>();
+            if (g != null) {
+                g.EmpezarAMoverse();
             }
         }
     }

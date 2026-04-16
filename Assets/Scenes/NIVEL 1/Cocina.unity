@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83985e69ceb75d6458d43416f18272b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskID: 3
+  taskID: 5
   objetoNeceserio: {fileID: 11400000, guid: 37d81e2d37431ec43944ab84a2934fb6, type: 2}
   spriteDespues: {fileID: -986852334376999736, guid: 1120f64a995bcf845ad80a9a9d1327f0, type: 3}
 --- !u!212 &151424322
@@ -875,6 +875,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextSceneName: Pasillo_Cocina
   destinationPointID: salidaCocina
+  idLlaveRequerida: 
+  triggerBloqueado: {fileID: 0}
 --- !u!61 &481853067
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1952,12 +1954,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df5a9f58bc322843904d883b2ed7c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    dialogueLines:
-    - character:
-        name: Sirvienta
-        icon: {fileID: 5235901662529209566, guid: 8159b823d86cb154c95f79cfc8866470, type: 3}
-      line: "\xA1EH! \xBFQue haces tu aqui?"
+  dialogoInicial:
+    dialogueLines: []
+  dialogoProgreso:
+    dialogueLines: []
+  dialogoFinalizado:
+    dialogueLines: []
+  objetivoCumplido: 0
 --- !u!114 &1178309762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2360,12 +2363,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df5a9f58bc322843904d883b2ed7c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    dialogueLines:
-    - character:
-        name: Sirvienta
-        icon: {fileID: 3750141458171848588, guid: e82e5797bf294064ca8aa21d7a79749e, type: 3}
-      line: No debes de estar aqui. FUERA.
+  dialogoInicial:
+    dialogueLines: []
+  dialogoProgreso:
+    dialogueLines: []
+  dialogoFinalizado:
+    dialogueLines: []
+  objetivoCumplido: 0
 --- !u!114 &1904848035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2507,12 +2511,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df5a9f58bc322843904d883b2ed7c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    dialogueLines:
-    - character:
-        name: <i>Sistema</i>
-        icon: {fileID: 5942924935586280262, guid: 37e884a414bde474dbf660cd0093d933, type: 3}
-      line: <i>Aceitera recogida </i>
+  dialogoInicial:
+    dialogueLines: []
+  dialogoProgreso:
+    dialogueLines: []
+  dialogoFinalizado:
+    dialogueLines: []
+  objetivoCumplido: 0
 --- !u!114 &2055271500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2528,7 +2533,7 @@ MonoBehaviour:
   itemData: {fileID: 11400000, guid: 7a98442550385aa468f0399ff4a5b730, type: 2}
   quantity: 1
   uniqueID: ID_Aceitera
-  taskID: 4
+  taskID: 9
 --- !u!70 &2055271501
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
