@@ -2312,7 +2312,7 @@ MonoBehaviour:
         de Basil. Hay una reuni\xF3n privada de los Knickerbocker."
     - character:
         name: Elvira
-        icon: {fileID: 21300000, guid: 609b6dd389d84484f8c1569725c124fd, type: 3}
+        icon: {fileID: -6177139537827096713, guid: 7f3b39185ede8c143932d888e56047ab, type: 3}
       line: "Querido, sabes que mi p\xFAblico me espera ah\xED dentro. No querr\xE1s
         que el espect\xE1culo se retrase, \xBFverdad?"
     - character:
@@ -2996,8 +2996,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 209295777
   m_SortingLayer: 4
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 609b6dd389d84484f8c1569725c124fd, type: 3}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: -6177139537827096713, guid: 7f3b39185ede8c143932d888e56047ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3018,7 +3018,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.03, y: -2.84, z: 0}
-  m_LocalScale: {x: 0.03930438, y: 0.03930438, z: 0.03930438}
+  m_LocalScale: {x: 0.0316754, y: 0.0316754, z: 0.0316754}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3061,7 +3061,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 20, y: 20}
+    oldSize: {x: 11, y: 29.157118}
     newSize: {x: 20, y: 20}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3513,7 +3513,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.7, y: 18.11}
+    oldSize: {x: 7.7899995, y: 25.576244}
     newSize: {x: 10.7, y: 18.11}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3565,7 +3565,7 @@ SpriteRenderer:
   m_SortingLayerID: 209295777
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7204474085169346101, guid: 08cf0edb7163b5d4cbc43f860ae351b8, type: 3}
+  m_Sprite: {fileID: 2842594032047097641, guid: bfa6f266c276ab840b89f053a8a2bfbe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3586,7 +3586,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.907, y: -1.548, z: 0}
-  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
+  m_LocalScale: {x: 0.033671997, y: 0.033671997, z: 0.033671997}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 668045866}
@@ -3608,24 +3608,24 @@ MonoBehaviour:
     dialogueLines:
     - character:
         name: Dra.Zina
-        icon: {fileID: 7204474085169346101, guid: 08cf0edb7163b5d4cbc43f860ae351b8, type: 3}
+        icon: {fileID: 2842594032047097641, guid: bfa6f266c276ab840b89f053a8a2bfbe, type: 3}
       line: "Elvira... siempre tan puntual para los problemas. \xBFHas o\xEDdo los
         rumores? Basil ha estado hablando m\xE1s de la cuenta. Dice que a las 19:40
         esto se llenar\xE1 de uniformados."
     - character:
         name: Elvira
-        icon: {fileID: 21300000, guid: 609b6dd389d84484f8c1569725c124fd, type: 3}
+        icon: {fileID: -6177139537827096713, guid: 7f3b39185ede8c143932d888e56047ab, type: 3}
       line: "He o\xEDdo que el Teniente O'Malley tiene ganas de colgarse una medalla
         a nuestra costa. \xBFQu\xE9 hay en ese malet\xEDn, Zina?"
     - character:
         name: Dra.Zina
-        icon: {fileID: 7204474085169346101, guid: 08cf0edb7163b5d4cbc43f860ae351b8, type: 3}
+        icon: {fileID: 2842594032047097641, guid: bfa6f266c276ab840b89f053a8a2bfbe, type: 3}
       line: "Mi seguro de vida. La c\xE1psula de cianuro que Basil me rob\xF3 de
         Columbia. Si la polic\xEDa llega y registra este lugar antes de que 'limpiemos'
         el nombre de Basil de la lista de los vivos, estamos muertas."
     - character:
         name: Dra.Zina
-        icon: {fileID: 7204474085169346101, guid: 08cf0edb7163b5d4cbc43f860ae351b8, type: 3}
+        icon: {fileID: 2842594032047097641, guid: bfa6f266c276ab840b89f053a8a2bfbe, type: 3}
       line: "Necesito esa c\xE1psula para su petit four de frambuesa. El c\xF3digo
         es el a\xF1o en que empez\xF3 nuestra sociedad en el Waldorf, pero Basil
         es un paranoico... puso la fecha al rev\xE9s. \xC1brelo antes de que el Wolf
@@ -3634,7 +3634,7 @@ MonoBehaviour:
     dialogueLines:
     - character:
         name: Dra.Zina
-        icon: {fileID: 7204474085169346101, guid: 08cf0edb7163b5d4cbc43f860ae351b8, type: 3}
+        icon: {fileID: 2842594032047097641, guid: bfa6f266c276ab840b89f053a8a2bfbe, type: 3}
       line: "A\xFAn no ha llegado O'Malley, pero puedo oler el miedo en el ambiente.
         \xBFHas descifrado ya el a\xF1o invertido?"
   dialogoFinalizado:
@@ -3682,7 +3682,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.7, y: 18.11}
+    oldSize: {x: 7.7899995, y: 25.576244}
     newSize: {x: 10.7, y: 18.11}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5244,7 +5244,7 @@ MonoBehaviour:
   cupcakeEnvenenado: 0
   tieneAceite: 0
   pasilloSaboteado: 0
-  jarronRoto: 0
+  jarronRoto: 1
 --- !u!4 &1184946686
 Transform:
   m_ObjectHideFlags: 0
