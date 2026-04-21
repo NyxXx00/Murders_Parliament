@@ -1,8 +1,11 @@
 using UnityEngine;
 
 public class Sabotaje : MonoBehaviour {
-    public GameObject manchaAceiteVisual; // El sprite de la mancha en el suelo
-    public ItemData objetoAceite;         // Arrastra aquí el ItemData del Aceite desde tu carpeta de Assets
+    public GameObject manchaAceiteVisual;
+    public ItemData objetoAceite;
+
+    [Header("Cursores")]
+    public Texture2D cursorInteractuar;
 
     void Update() {
         if (Input.GetMouseButtonDown(0)) {
@@ -28,6 +31,10 @@ public class Sabotaje : MonoBehaviour {
                 }
             }
         }
+    }
+
+    private void OnMouseEnter() {
+        if (cursorInteractuar != null) Cursor.SetCursor(cursorInteractuar, Vector2.zero, CursorMode.Auto);
     }
 
     void PonerMancha() {

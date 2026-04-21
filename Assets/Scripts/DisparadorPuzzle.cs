@@ -1,15 +1,20 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class DisparadorPuzzle : MonoBehaviour {
     [Header("Referencias")]
-    public GameObject panelPuzzle; // Arrastra aquí el Panel de la UI
+    public GameObject panelPuzzle;
     public float distanciaInteraccion = 3f;
 
+    [Header("Objetos a Desaparecer")]
+    public GameObject spriteTapa;
+    public GameObject cuadroTorcido;
+
+
     [Header("Cursores")]
-    public Texture2D cursorLupa; // Tu textura de cursor
+    public Texture2D cursorLupa;
 
     private Transform jugador;
+    private bool puzzleCompletado = false;
 
     void Start() {
         jugador = GameObject.FindWithTag("Player").transform;
@@ -17,7 +22,7 @@ public class DisparadorPuzzle : MonoBehaviour {
 
     // Cambiar el cursor al pasar por encima
     void OnMouseEnter() {
-        if (cursorLupa != null) {
+        if (!puzzleCompletado && cursorLupa != null) {
             Cursor.SetCursor(cursorLupa, Vector2.zero, CursorMode.Auto);
         }
     }
@@ -28,6 +33,9 @@ public class DisparadorPuzzle : MonoBehaviour {
 
     // Al hacer clic, comprobamos distancia y abrimos el panel
     void OnMouseDown() {
+
+        if (puzzleCompletado) return;
+
         Debug.Log("1. Clic detectado");
 
         if (jugador == null) {
@@ -67,8 +75,24 @@ public class DisparadorPuzzle : MonoBehaviour {
         }
     }
 
-    // IMPORTANTE: En el botón de "Cerrar" del puzzle, deberías llamar a una función 
-    // que vuelva a activar el Collider si quieres volver a abrirlo luego.
+    public void FinalizarPuzzleYLimpiarEscena() {
+        puzzleCompletado = true;
+
+        // Desactivamos los objetos visuales viejos
+        if (spriteTapa != null) spriteTapa.SetActive(false);
+        if (cuadroTorcido != null) cuadroTorcido.SetActive(false);
+
+        // Cerramos el panel del puzzle
+        if (panelPuzzle != null) panelPuzzle.SetActive(false);
+
+        // Desactivamos este disparador para siempre
+        this.enabled = false;
+        if (GetComponent<Collider2D>() != null) GetComponent<Collider2D>().enabled = false;
+
+        Debug.Log("Puzzle completado: Objetos antiguos eliminados.");
+    }
+
+
     public void ReactivarInteraccion() {
         if (GetComponent<Collider2D>() != null) {
             GetComponent<Collider2D>().enabled = true;

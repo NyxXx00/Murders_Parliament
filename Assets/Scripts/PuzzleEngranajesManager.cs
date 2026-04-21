@@ -14,6 +14,9 @@ public class PuzzleEngranajesManager : MonoBehaviour {
     public DialogueTrigger dialogoVictoria;
     public int taskID;
 
+    [Header("Limpieza de Escena")]
+    public DisparadorPuzzle disparador;
+
     [Header("Sonido de Victoria")]
     public AudioClip sonidoEngranajes;
     private AudioSource altavoz;
@@ -59,6 +62,10 @@ public class PuzzleEngranajesManager : MonoBehaviour {
 
     IEnumerator SecuenciaVictoria() {
         Debug.Log("¡VICTORIA DETECTADA!");
+
+        if (disparador != null) {
+            disparador.FinalizarPuzzleYLimpiarEscena();
+        }
 
         // 1. Sonido y Tarea
         if (altavoz != null && sonidoEngranajes != null) {

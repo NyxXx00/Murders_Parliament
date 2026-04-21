@@ -1626,12 +1626,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2950829776511611001, guid: a04dfc5f5c61abc4cad7b911b552a61e, type: 3}
+  m_Sprite: {fileID: -2950829776511611001, guid: 55786f31a5a53a048aee5023092d54a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 50, y: 30.004883}
+  m_Size: {x: 47.81, y: 30.004883}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5244,7 +5244,7 @@ MonoBehaviour:
   cupcakeEnvenenado: 0
   tieneAceite: 0
   pasilloSaboteado: 0
-  jarronRoto: 1
+  jarronRoto: 0
 --- !u!4 &1184946686
 Transform:
   m_ObjectHideFlags: 0
