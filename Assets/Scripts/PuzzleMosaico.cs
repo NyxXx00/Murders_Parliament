@@ -37,7 +37,6 @@ public class PuzzleMosaico : MonoBehaviour {
     public GameObject objetoPiedra;     // La piedra que aparece en el suelo
     public GameObject grupoSirvientas;  // El objeto PADRE que tiene a todas las sirvientas
     public GameObject flechaGuia;       // La flecha de la cocina
-    public AudioClip sonidoVictoria;
 
     public void ClickBoton(string pieza) {
         StopAllCoroutines();
@@ -81,11 +80,6 @@ public class PuzzleMosaico : MonoBehaviour {
 
     void GanarPuzzle() {
         Debug.Log("¡Mosaico Completado!");
-        if (sonidoVictoria != null && fuenteAudio != null) {
-            fuenteAudio.Stop();
-            fuenteAudio.PlayOneShot(sonidoVictoria);
-        }
-
         // 1. Aparece la piedra en el suelo
         if (objetoPiedra != null) objetoPiedra.SetActive(true);
 

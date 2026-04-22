@@ -974,12 +974,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158747165}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.87, y: 0.8, z: 0}
-  m_LocalScale: {x: 0.02868083, y: 0.02868083, z: 0.02868083}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 17.065899, y: 8.9668255, z: 0}
+  m_LocalScale: {x: 0.8296, y: 0.8296, z: 0.8296}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1347766048}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &232864803
 GameObject:
@@ -1482,12 +1482,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314799097}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.46, y: 0.49, z: 0}
-  m_LocalScale: {x: 0.03457188, y: 0.03457188, z: 0.03457188}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1347766048}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &314799100
 MonoBehaviour:
@@ -3413,7 +3413,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &845891903
 Transform:
   m_ObjectHideFlags: 0
@@ -4070,30 +4070,29 @@ MonoBehaviour:
   inicioMosaico: 0.3
   duracionMosaico: 1
   spritesGrande:
-  - {fileID: -5748423131904129717, guid: 362efcd2b6330ae46ad13a9a0a0c4990, type: 3}
-  - {fileID: -956531251211240412, guid: 1f4de9817eaac7844947cb623ba69644, type: 3}
-  - {fileID: 4918519795132840497, guid: 609530f10b2bcf0488a9a611d4a4cef4, type: 3}
-  - {fileID: 8775658043837499825, guid: d6e1a7be7bc67b448808b6e96f55b8f8, type: 3}
+  - {fileID: 8410447330931337761, guid: 362efcd2b6330ae46ad13a9a0a0c4990, type: 3}
+  - {fileID: 5732105171045342794, guid: 2623921fc92de3449a97d9f7cf74b0a1, type: 3}
+  - {fileID: -4884798552044114808, guid: f2483e0f0d6e68e4984ed5507f00e049, type: 3}
+  - {fileID: -2411530168886244914, guid: c25de8fd8481354438e9c0fc7eb177cd, type: 3}
   spritesMediana:
-  - {fileID: -3601626621312889941, guid: df00aa33f60b1544c95039b6c8ea6bf8, type: 3}
-  - {fileID: -5863723899332886347, guid: 77b04f035447f7a4cbb68423ef4e8375, type: 3}
-  - {fileID: 6281367037578090081, guid: e96735c1509493643ae6964d02d554c8, type: 3}
-  - {fileID: 7604316240970626646, guid: 30cfe6a85f72ec04dbeb675ea48de1ea, type: 3}
+  - {fileID: -8887436136458174606, guid: 7327dc61fe1d8fe48a6ea98a1f340801, type: 3}
+  - {fileID: -4664085399401161271, guid: 2dc08416d1b68bf45b7b95277dd92a31, type: 3}
+  - {fileID: 5420111144425498540, guid: 3b0fb743c7bb4fd4ba29ef06a1383bfc, type: 3}
+  - {fileID: -5365562755570677921, guid: 1617219418a7448449ee8902829999f9, type: 3}
   spritesCentro:
-  - {fileID: 2897979753167885931, guid: e81ee45add76dc44faa917624eef31c9, type: 3}
-  - {fileID: 3301951831337366928, guid: f13f90afe8450d040a5466c04900a8d5, type: 3}
-  - {fileID: -6320923550339648858, guid: 6b04c635540910b47aa0c81771b04a74, type: 3}
-  - {fileID: 7711788646871157090, guid: 26da9604d0df62f43a766066aa8d73d7, type: 3}
-  displayGrande: {fileID: 0}
-  displayMediana: {fileID: 0}
-  displayCentro: {fileID: 0}
+  - {fileID: 6484230312536812484, guid: f8280c87c73ca8441ab163c55d2aabd6, type: 3}
+  - {fileID: -4245002670947512488, guid: a022199db7cd0b94da9e3b8ce46a7915, type: 3}
+  - {fileID: -3489173887187246228, guid: ac1611252a62cf348a840b6ec1cc392a, type: 3}
+  - {fileID: 5010457845713245021, guid: b0cd0596ac6ec354d90ed7f1a1b2c8ba, type: 3}
+  displayGrande: {fileID: 1395753181}
+  displayMediana: {fileID: 1344232415}
+  displayCentro: {fileID: 1976589734}
   solGrande: 0
-  solMediana: 0
-  solCentro: 0
+  solMediana: 1
+  solCentro: 1
   objetoPiedra: {fileID: 818946601}
-  grupoSirvientas: {fileID: 0}
-  flechaGuia: {fileID: 0}
-  sonidoVictoria: {fileID: 0}
+  grupoSirvientas: {fileID: 1347766047}
+  flechaGuia: {fileID: 917509847}
 --- !u!4 &1257561211
 Transform:
   m_ObjectHideFlags: 0
@@ -4304,6 +4303,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344232413}
   m_CullTransparentMesh: 1
+--- !u!1 &1347766047
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1347766048}
+  m_Layer: 6
+  m_Name: Grupo Sirvientas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1347766048
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347766047}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.46, y: 0.49, z: 0}
+  m_LocalScale: {x: 0.03457188, y: 0.03457188, z: 0.03457188}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 314799099}
+  - {fileID: 158747169}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1395753179
 GameObject:
   m_ObjectHideFlags: 0
@@ -5226,8 +5258,7 @@ SceneRoots:
   - {fileID: 1257561211}
   - {fileID: 818946603}
   - {fileID: 1880346849}
-  - {fileID: 314799099}
-  - {fileID: 158747169}
+  - {fileID: 1347766048}
   - {fileID: 1199442253}
   - {fileID: 649785423}
   - {fileID: 917509848}
