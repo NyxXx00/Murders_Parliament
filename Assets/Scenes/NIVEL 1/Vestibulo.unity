@@ -3641,7 +3641,7 @@ MonoBehaviour:
     dialogueLines:
     - character:
         name: Dra.Zina
-        icon: {fileID: 7204474085169346101, guid: 08cf0edb7163b5d4cbc43f860ae351b8, type: 3}
+        icon: {fileID: 2842594032047097641, guid: bfa6f266c276ab840b89f053a8a2bfbe, type: 3}
       line: "Aqu\xED tienes. Una peque\xF1a c\xE1psula para un gran problema."
   objetivoCumplido: 0
 --- !u!60 &978163974
