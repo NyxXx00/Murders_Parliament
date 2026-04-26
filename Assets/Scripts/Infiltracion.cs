@@ -7,18 +7,18 @@ public class Infiltracion : MonoBehaviour {
     public Transform[] rutaALaCocina; // Los puntos que esquivan los setos
 
     public void LanzarPiedra() {
-        // Comprobar que estamos escondidos
-        if (EsconditeEstatua.jugadorEstaEscondido) {
-            Debug.Log("¡Piedra lanzada! Las sirvientas se mueven por la ruta segura.");
+        Debug.Log("Intentando mover a las sirvientas...");
 
-            foreach (SirvientaJardin s in sirvientas) {
-                if (s != null) s.EscucharRuido(rutaALaCocina);
-            }
-
-            if (zonaImpacto != null) zonaImpacto.SetActive(false);
+        // Si la lista de sirvientas está vacía, esto las busca automáticamente
+        if (sirvientas == null || sirvientas.Length == 0) {
+            sirvientas = Object.FindObjectsByType<SirvientaJardin>(FindObjectsSortMode.None);
         }
-        else {
-            Debug.Log("Estás a la vista, no puedes lanzar la piedra.");
+
+        foreach (SirvientaJardin s in sirvientas) {
+            if (s != null) {
+                Debug.Log("Avisando a: " + s.name);
+                s.EscucharRuido(rutaALaCocina);
+            }
         }
     }
 }

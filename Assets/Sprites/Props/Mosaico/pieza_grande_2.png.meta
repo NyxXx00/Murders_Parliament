@@ -103,10 +103,10 @@ TextureImporter:
       name: pieza_grande_2_0
       rect:
         serializedVersion: 2
-        x: 3013
-        y: 823
+        x: 45
+        y: 32
         width: 1403
-        height: 1700
+        height: 1439
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

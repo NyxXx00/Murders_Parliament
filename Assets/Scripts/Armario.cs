@@ -10,7 +10,7 @@ public class Armario : MonoBehaviour {
 
     [Header("Ajustes de Interacción")]
     public float radioDeteccion = 1.5f;
-    public KeyCode teclaInteraccion = KeyCode.F;
+    public KeyCode teclaInteraccion = KeyCode.Q;
     public int taskID;
 
     [Header("Estado")]

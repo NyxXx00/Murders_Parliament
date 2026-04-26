@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db04b7a84f8dfb4aa71453297f95fff, type: 3}
+  m_Name: ID_Piedra
+  m_EditorClassIdentifier: 
+  ItemID: ID_Piedra
+  ItemName: Piedra
+  Description: 
+  icon: {fileID: -4902396012844125982, guid: ce2596096f94c1241a99c906bc62b198, type: 3}
+  cursorTexture: {fileID: 2800000, guid: 2ef2ae525a259024492e5fb2d068994b, type: 3}
+  tieneSecreto: 0
+  inspeccionado: 0
+  RevealedItemData: {fileID: 0}
+  SecretPrompt: 
+  RevealedDescription: 

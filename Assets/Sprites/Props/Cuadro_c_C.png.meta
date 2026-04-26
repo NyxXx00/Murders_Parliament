@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 38914c84ac909274e81a110e5bbcd2b6
+guid: 787996b5677faf841bab4d841c64936b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4176543889681357616
-    second: "Jarr\xF3n_roto_0"
-  - first:
-      213: -4218271199810295125
-    second: "Jarr\xF3n_roto_1"
+      213: 264657377717626429
+    second: Cuadro_c_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -27,7 +24,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -49,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -60,7 +57,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 8
+  textureType: 7
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Jarr\xF3n_roto_0"
+      name: Cuadro_c_0
       rect:
         serializedVersion: 2
-        x: 1023
-        y: 254
-        width: 239
-        height: 205
+        x: 961
+        y: 563
+        width: 246
+        height: 579
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 03b19451a8016f930800000000000000
-      internalID: 4176543889681357616
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Jarr\xF3n_roto_1"
-      rect:
-        serializedVersion: 2
-        x: 1193
-        y: 361
-        width: 191
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: baaeb0171b0b575c0800000000000000
-      internalID: -4218271199810295125
+      spriteID: d36ab0a9b704ca300800000000000000
+      internalID: 264657377717626429
       vertices: []
       indices: 
       edges: []
@@ -150,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "Jarr\xF3n_roto_0": 4176543889681357616
-      "Jarr\xF3n_roto_1": -4218271199810295125
+      Cuadro_c_0: 264657377717626429
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -4,41 +4,68 @@ using UnityEngine.UI;
 
 public class PuzzleMosaico : MonoBehaviour {
 
+    [Header("Control de Visibilidad")]
+    public GameObject panelVisual; // ARRASTRA AQUÍ EL 'PUZZLEGIRATORIO'
+
     [Header("Configuración de Sonido")]
     public AudioSource fuenteAudio;
-
-    [Header("Tiempos del Clip (en segundos)")]
-    public float inicioBoton = 0.0f;
-    public float duracionBoton = 0.3f;
-    public float inicioMosaico = 0.5f;
+    public float inicioBoton = 0.1f;
+    public float duracionBoton = 1.0f;
+    public float inicioMosaico = 0.3f;
     public float duracionMosaico = 1.0f;
 
-    [Header("Sprites de las Piezas (4 por cada una)")]
+    [Header("Sprites de las Piezas")]
     public Sprite[] spritesGrande;
     public Sprite[] spritesMediana;
     public Sprite[] spritesCentro;
 
-    [Header("Referencias de la UI (Images)")]
+    [Header("Referencias UI (Imágenes hijas)")]
     public Image displayGrande;
     public Image displayMediana;
     public Image displayCentro;
 
-    [Header("Combinación Ganadora (0 a 3)")]
+    [Header("Combinación Ganadora")]
     public int solGrande = 0;
-    public int solMediana = 0;
-    public int solCentro = 0;
+    public int solMediana = 1;
+    public int solCentro = 1;
 
-    // Estados actuales
     private int estadoGrande = 0;
     private int estadoMediana = 0;
     private int estadoCentro = 0;
 
-    [Header("Recompensa e Infiltración")]
-    public GameObject objetoPiedra;     // La piedra que aparece en el suelo
-    public GameObject grupoSirvientas;  // El objeto PADRE que tiene a todas las sirvientas
-    public GameObject flechaGuia;       // La flecha de la cocina
+    [Header("Recompensas")]
+    public GameObject objetoPiedra;
+    public GameObject grupoSirvientas;
+    public GameObject flechaGuia;
+
+    private static bool completadoEnSesion = false;
+
+    void Awake() {
+        // Si ya se ganó, que no aparezca nada al recargar escena
+        if (completadoEnSesion) {
+            SolucionInmediata();
+        }
+        else {
+            if (panelVisual != null) panelVisual.SetActive(false);
+        }
+    }
+
+    // FUNCIÓN PARA LAS ESTATUAS
+    public void AbrirPuzzle() {
+        if (completadoEnSesion) return;
+
+        if (panelVisual != null) {
+            panelVisual.SetActive(true);
+            // Forzamos posición al centro por si acaso
+            RectTransform rt = panelVisual.GetComponent<RectTransform>();
+            if (rt != null) rt.anchoredPosition = Vector2.zero;
+        }
+    }
 
     public void ClickBoton(string pieza) {
+        if (completadoEnSesion) return;
+
+        // Sonido de giro
         StopAllCoroutines();
         StartCoroutine(ReproducirSegmento(inicioBoton, duracionBoton));
         Invoke("ReproducirGiroMosaico", 0.15f);
@@ -64,7 +91,7 @@ public class PuzzleMosaico : MonoBehaviour {
     }
 
     IEnumerator ReproducirSegmento(float startTime, float duration) {
-        if (fuenteAudio != null) {
+        if (fuenteAudio != null && fuenteAudio.clip != null) {
             fuenteAudio.time = startTime;
             fuenteAudio.Play();
             yield return new WaitForSeconds(duration);
@@ -74,30 +101,55 @@ public class PuzzleMosaico : MonoBehaviour {
 
     void ComprobarVictoria() {
         if (estadoGrande == solGrande && estadoMediana == solMediana && estadoCentro == solCentro) {
-            GanarPuzzle();
+            Ganar();
         }
     }
 
-    void GanarPuzzle() {
-        Debug.Log("¡Mosaico Completado!");
-        // 1. Aparece la piedra en el suelo
+    void Ganar() {
+        completadoEnSesion = true;
         if (objetoPiedra != null) objetoPiedra.SetActive(true);
-
-        // 2. Aparecen las sirvientas en el jardín
         if (grupoSirvientas != null) grupoSirvientas.SetActive(true);
 
-        CanvasGroup cg = GetComponent<CanvasGroup>();
+        // Bloquear interacción
+        CanvasGroup cg = panelVisual.GetComponent<CanvasGroup>();
         if (cg != null) cg.interactable = false;
+
+        Invoke("CerrarPanelGanador", 0.5f);
+
+        if (objetoPiedra != null) objetoPiedra.SetActive(true);
+        if (grupoSirvientas != null) {
+            grupoSirvientas.SetActive(true);
+            StartCoroutine(ActivarSirvientasEscalonado());
+        }
+        System.Collections.IEnumerator ActivarSirvientasEscalonado() {
+            foreach (Transform hija in grupoSirvientas.transform) {
+                hija.gameObject.SetActive(true);
+                Debug.Log("Sirvienta activada: " + hija.name);
+
+                // Espera 2 segundos antes de activar a la siguiente
+                yield return new WaitForSeconds(2.0f);
+            }
+            if (flechaGuia != null) {
+                flechaGuia.SetActive(true);
+                Debug.Log("Flecha de lanzamiento activada.");
+            }
+        }
     }
 
-    // Esta función se llama desde el script de la piedra al recogerla
+    void CerrarPanelGanador() {
+        if (panelVisual != null) {
+            panelVisual.SetActive(false);
+        }
+    }
+
     public void RecogerPiedra() {
-        // Desactivar el panel del puzzle (UI)
-        gameObject.SetActive(false);
-
-        // Activar la flecha indicadora en la cocina
+        if (panelVisual != null) panelVisual.SetActive(false);
         if (flechaGuia != null) flechaGuia.SetActive(true);
+    }
 
-        Debug.Log("Piedra recogida. Sirvientas activas. Flecha activada.");
+    void SolucionInmediata() {
+        if (objetoPiedra != null) objetoPiedra.SetActive(true);
+        if (grupoSirvientas != null) grupoSirvientas.SetActive(true);
+        if (panelVisual != null) panelVisual.SetActive(false);
     }
 }

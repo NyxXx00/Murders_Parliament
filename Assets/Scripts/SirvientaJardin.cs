@@ -1,65 +1,63 @@
 using UnityEngine;
 
 public class SirvientaJardin : MonoBehaviour {
-    [Header("Configuración de Patrulla")]
-    [SerializeField] private float velocidadMov;
-    [SerializeField] private Transform[] puntosPatrulla;
-    [SerializeField] private float distanciaMinima = 0.2f;
-    [SerializeField] private float tiempoEspera;
+    public float velocidad = 2.5f;
+    public GameObject objetoCarro;
 
-    [Header("Ruta de Distracción")]
-    private Transform[] puntosDistraccion;
-    private bool modoDistraccion = false;
+    [Header("Ruta para llegar al puesto (Esquivando arbustos)")]
+    public Transform[] rutaPatrullaIda; // Aquí pones los puntos para rodear los arbustos
 
+    private Transform[] rutaActual;
     private int indiceActual = 0;
-    private float tiempoEsperaActual;
+    private bool investigando = false;
+    private bool paradaTotal = false;
 
-    private void Start() {
-        tiempoEsperaActual = tiempoEspera;
-        if (puntosPatrulla.Length > 0) Girar(puntosPatrulla[indiceActual].position);
+    void Start() {
+        // Al empezar, su ruta es la de ir a su puesto
+        if (rutaPatrullaIda.Length > 0) {
+            rutaActual = rutaPatrullaIda;
+        }
     }
 
-    private void Update() {
-        if (!modoDistraccion && puntosPatrulla.Length == 0) return;
+    void Update() {
+        if (paradaTotal || rutaActual == null || rutaActual.Length == 0) return;
 
-        Vector3 objetivo = modoDistraccion ? puntosDistraccion[indiceActual].position : puntosPatrulla[indiceActual].position;
+        Transform objetivo = rutaActual[indiceActual];
+        MoverHacia(objetivo.position);
 
-        // Movimiento
-        transform.position = Vector2.MoveTowards(transform.position, objetivo, velocidadMov * Time.deltaTime);
-
-        // Si llega al punto
-        if (Vector2.Distance(transform.position, objetivo) < distanciaMinima) {
-            if (modoDistraccion) {
-                if (indiceActual < puntosDistraccion.Length - 1) {
-                    indiceActual++;
-                    Girar(puntosDistraccion[indiceActual].position);
-                }
-                // Si llega al último, se queda ahí (no hacemos nada)
+        if (Vector2.Distance(transform.position, objetivo.position) < 0.1f) {
+            // Avanzar al siguiente punto de la ruta
+            if (indiceActual < rutaActual.Length - 1) {
+                indiceActual++;
             }
             else {
-                // Lógica de espera para patrulla normal
-                if (tiempoEsperaActual > 0) {
-                    tiempoEsperaActual -= Time.deltaTime;
+                // Si es la ruta de investigación, se para para siempre
+                if (investigando) {
+                    paradaTotal = true;
                 }
-                else {
-                    indiceActual = (indiceActual + 1) % puntosPatrulla.Length;
-                    tiempoEsperaActual = tiempoEspera;
-                    Girar(puntosPatrulla[indiceActual].position);
-                }
+
             }
         }
     }
 
-    public void EscucharRuido(Transform[] rutaHaciaCocina) {
-        puntosDistraccion = rutaHaciaCocina;
-        modoDistraccion = true;
-        indiceActual = 0;
-        tiempoEsperaActual = 0;
-        Girar(puntosDistraccion[indiceActual].position);
+    void MoverHacia(Vector2 destino) {
+        transform.position = Vector2.MoveTowards(transform.position, destino, velocidad * Time.deltaTime);
+        if (transform.position.x < destino.x) transform.eulerAngles = Vector3.zero;
+        else transform.eulerAngles = new Vector3(0, 180, 0);
     }
 
-    private void Girar(Vector3 destino) {
-        if (transform.position.x < destino.x) transform.eulerAngles = new Vector3(0, 0, 0);
-        else transform.eulerAngles = new Vector3(0, 180, 0);
+    public void EscucharRuido(Transform[] rutaHaciaPiedra) {
+        if (investigando) return;
+
+        if (objetoCarro != null) {
+            objetoCarro.transform.SetParent(null);
+        }
+
+        // CAMBIO DE RUTA RADICAL
+        rutaActual = rutaHaciaPiedra;
+        indiceActual = 0;
+        investigando = true;
+        paradaTotal = false;
+        Debug.Log("¡Ruido! Cambiando ruta para esquivar arbustos hacia la piedra.");
     }
 }

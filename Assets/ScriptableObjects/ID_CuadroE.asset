@@ -16,7 +16,7 @@ MonoBehaviour:
   ItemName: Cuadro E
   Description: 
   icon: {fileID: -3353845065150320848, guid: c5db04ef31cffb9459e4526cb9ae8ca7, type: 3}
-  cursorTexture: {fileID: 0}
+  cursorTexture: {fileID: 2800000, guid: ffad502b7e367aa46b8de740ac15e112, type: 3}
   tieneSecreto: 1
   inspeccionado: 0
   RevealedItemData: {fileID: 0}

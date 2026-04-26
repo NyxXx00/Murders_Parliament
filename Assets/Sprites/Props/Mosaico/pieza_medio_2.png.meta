@@ -106,10 +106,10 @@ TextureImporter:
       name: pieza_medio_2_0
       rect:
         serializedVersion: 2
-        x: 3118
-        y: 823
-        width: 1121
-        height: 1700
+        x: 36
+        y: 96
+        width: 951
+        height: 951
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       name: pieza_medio_2_1
       rect:
         serializedVersion: 2
-        x: 3754
-        y: 1170
+        x: 551
+        y: 3
         width: 8
         height: 13
       alignment: 0

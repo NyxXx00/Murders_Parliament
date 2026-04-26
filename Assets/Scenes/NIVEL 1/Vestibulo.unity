@@ -943,7 +943,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -590}
+  m_AnchoredPosition: {x: 590, y: -690}
   m_SizeDelta: {x: -1820, y: -980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &310182188
@@ -2907,7 +2907,7 @@ GameObject:
   - component: {fileID: 785978781}
   - component: {fileID: 785978779}
   - component: {fileID: 785978784}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: Elvira
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3018,7 +3018,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.03, y: -2.84, z: 0}
-  m_LocalScale: {x: 0.0316754, y: 0.0316754, z: 0.0316754}
+  m_LocalScale: {x: 0.026417281, y: 0.026417281, z: 0.026417281}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3057,7 +3057,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -1.1324687, y: -3.5082395}
+  m_Offset: {x: 0.84434795, y: -3.5082397}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3067,7 +3067,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.2160883, y: 10.817047}
+  m_Size: {x: 5.844061, y: 10.817047}
   m_EdgeRadius: 0
 --- !u!224 &804068718 stripped
 RectTransform:
@@ -3108,7 +3108,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -150}
+  m_AnchoredPosition: {x: 590, y: -250}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &823357167
@@ -5244,7 +5244,7 @@ MonoBehaviour:
   cupcakeEnvenenado: 0
   tieneAceite: 0
   pasilloSaboteado: 0
-  jarronRoto: 0
+  jarronRoto: 1
 --- !u!4 &1184946686
 Transform:
   m_ObjectHideFlags: 0
@@ -5272,7 +5272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35bf4f116229a92409324f5118998b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texturaCursorBase: {fileID: 2800000, guid: fe0b9b84ade39114a920400d1081b2e8, type: 3}
+  texturaCursorBase: {fileID: 2800000, guid: d66d393cb6a99404181bd25d0770784e, type: 3}
   texturaCursorSecreto: {fileID: 2800000, guid: 7ebedeb4bb26cc44c8318891461efb95, type: 3}
   hotspot: {x: 32, y: 32}
 --- !u!1 &1184960376
@@ -5451,7 +5451,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -225}
+  m_AnchoredPosition: {x: 590, y: -325}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1215410376
@@ -5491,7 +5491,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -5516,7 +5516,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -5858,7 +5858,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -275}
+  m_AnchoredPosition: {x: 590, y: -375}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1274646563
@@ -5898,7 +5898,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -5923,7 +5923,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -6014,9 +6014,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
+    m_Left: 100
     m_Right: 0
-    m_Top: 300
+    m_Top: 500
     m_Bottom: 0
   m_ChildAlignment: 4
   m_Spacing: 0
@@ -7116,7 +7116,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5070072612451586433, guid: 43c6022c76d246e4b8724d68048b5462, type: 3}
+  m_Sprite: {fileID: 5070072612451586433, guid: e3c33d3b1875f224dab7cac40933140a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

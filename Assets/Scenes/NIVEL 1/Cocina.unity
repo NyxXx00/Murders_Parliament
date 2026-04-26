@@ -1709,7 +1709,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogoInicial:
-    dialogueLines: []
+    dialogueLines:
+    - character:
+        name: Sirvienta
+        icon: {fileID: -8642784396412541623, guid: 68e0272d3b85605429850d7cfa647612, type: 3}
+      line: Fuera! Aqui no entra nadie
   dialogoProgreso:
     dialogueLines: []
   dialogoFinalizado:
@@ -1727,8 +1731,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 809880b3af0bdc5419ce599c8bd0d565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fovAngle: 60
-  fovRange: 5
+  fovAngle: 45
+  fovRange: 2
   rayPoint: {fileID: 900372775}
   capaObstaculos:
     serializedVersion: 2
@@ -1736,7 +1740,10 @@ MonoBehaviour:
   capaJugador:
     serializedVersion: 2
     m_Bits: 64
-  lookDirection: {x: 1, y: 0}
+  nombreEscenaMuerte: Pasillo_Hall_Cocina
+  idDelSpawnAlMorir: salidaPC-PHC
+  dialogoDeteccion: {fileID: 1178309761}
+  esperaAntesDeEscena: 2
 --- !u!1 &1178424106
 GameObject:
   m_ObjectHideFlags: 0
@@ -2118,7 +2125,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogoInicial:
-    dialogueLines: []
+    dialogueLines:
+    - character:
+        name: 
+        icon: {fileID: 4103517299876710992, guid: 687b9f41333b0b6459be4c45fb484d9f, type: 3}
+      line: No deberias de estar aqui
   dialogoProgreso:
     dialogueLines: []
   dialogoFinalizado:
@@ -2136,8 +2147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 809880b3af0bdc5419ce599c8bd0d565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fovAngle: 60
-  fovRange: 5
+  fovAngle: 45
+  fovRange: 2
   rayPoint: {fileID: 418567230}
   capaObstaculos:
     serializedVersion: 2
@@ -2145,7 +2156,10 @@ MonoBehaviour:
   capaJugador:
     serializedVersion: 2
     m_Bits: 64
-  lookDirection: {x: 1, y: 0}
+  nombreEscenaMuerte: Pasillo_Hall_Cocina
+  idDelSpawnAlMorir: salidaPC-PHC
+  dialogoDeteccion: {fileID: 1904848034}
+  esperaAntesDeEscena: 2
 --- !u!1 &2055271498
 GameObject:
   m_ObjectHideFlags: 0

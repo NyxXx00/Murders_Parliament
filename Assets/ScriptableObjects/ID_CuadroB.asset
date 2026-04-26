@@ -16,7 +16,7 @@ MonoBehaviour:
   ItemName: Cuadro B
   Description: 
   icon: {fileID: -1034203886343186893, guid: 587ec97407b7d5b4892d0e4197272eb0, type: 3}
-  cursorTexture: {fileID: 0}
+  cursorTexture: {fileID: 2800000, guid: 507bee3a55135ae4f9b93e83a2900b2c, type: 3}
   tieneSecreto: 1
   inspeccionado: 0
   RevealedItemData: {fileID: 0}

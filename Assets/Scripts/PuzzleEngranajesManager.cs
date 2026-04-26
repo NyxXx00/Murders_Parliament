@@ -6,11 +6,11 @@ public class PuzzleEngranajesManager : MonoBehaviour {
     public static PuzzleEngranajesManager Instance;
 
     public List<PiezaEngranaje> piezas;
-    [Tooltip("Sube esto si las piezas no se mueven (ej: 500)")]
     public float margenDistancia = 350f;
 
     [Header("Referencias de Victoria")]
     public GameObject panelPuzzle;
+    public GameObject imagenPistaPuzzle;
     public DialogueTrigger dialogoVictoria;
     public int taskID;
 
@@ -19,24 +19,33 @@ public class PuzzleEngranajesManager : MonoBehaviour {
 
     [Header("Sonido de Victoria")]
     public AudioClip sonidoEngranajes;
+    public float duracionSonido = 2.0f;
     private AudioSource altavoz;
+
+    private bool victoriaFinalizada = false;
+
+    // Esta variable guarda el estado mientras el juego esté ejecutándose
+    // Al cerrar y abrir el juego, volverá a ser false automáticamente.
+    private static bool yaCompletadoEstaSesion = false;
 
     void Awake() {
         Instance = this;
         altavoz = GetComponent<AudioSource>();
+        if (altavoz == null) altavoz = gameObject.AddComponent<AudioSource>();
+    }
 
-        if (piezas == null || piezas.Count == 0) {
-            piezas = new List<PiezaEngranaje>(GetComponentsInChildren<PiezaEngranaje>());
+    void Start() {
+        // Si ya se completó desde que abriste el juego, limpiamos la escena
+        if (yaCompletadoEstaSesion) {
+            OcultarElementosCompletados();
         }
     }
 
     public void IntentarMover(PiezaEngranaje piezaClicada) {
-        PiezaEngranaje hueco = piezas.Find(p => p.esHuecoVacio);
+        if (victoriaFinalizada || yaCompletadoEstaSesion) return;
 
-        if (hueco == null) {
-            Debug.LogError("ERROR: ¡No hay ninguna pieza marcada como 'Es Hueco Vacio'!");
-            return;
-        }
+        PiezaEngranaje hueco = piezas.Find(p => p.esHuecoVacio);
+        if (hueco == null) return;
 
         float distancia = Vector2.Distance(piezaClicada.GetComponent<RectTransform>().anchoredPosition, hueco.GetComponent<RectTransform>().anchoredPosition);
 
@@ -49,49 +58,51 @@ public class PuzzleEngranajesManager : MonoBehaviour {
     }
 
     public void ComprobarVictoria() {
+        if (victoriaFinalizada || yaCompletadoEstaSesion) return;
+
         int correctas = 0;
         foreach (PiezaEngranaje p in piezas) {
             if (p.EstaEnSuSitio()) correctas++;
         }
 
-        // Si todas están bien, lanzamos la CORRUTINA de victoria
         if (correctas == piezas.Count) {
+            victoriaFinalizada = true;
+            yaCompletadoEstaSesion = true;
             StartCoroutine(SecuenciaVictoria());
         }
     }
 
     IEnumerator SecuenciaVictoria() {
-        Debug.Log("¡VICTORIA DETECTADA!");
-
-        if (disparador != null) {
-            disparador.FinalizarPuzzleYLimpiarEscena();
-        }
-
-        // 1. Sonido y Tarea
         if (altavoz != null && sonidoEngranajes != null) {
-            altavoz.PlayOneShot(sonidoEngranajes);
+            altavoz.clip = sonidoEngranajes;
+            altavoz.Play();
+            Invoke("DetenerAudio", duracionSonido);
         }
 
-        if (TareasManager.Instance != null && taskID != 0) {
-            TareasManager.Instance.CompleteTask(taskID);
-        }
+        if (TareasManager.Instance != null) TareasManager.Instance.CompleteTask(taskID);
+        if (imagenPistaPuzzle != null) imagenPistaPuzzle.SetActive(false);
 
-        // 2. Desbloquear armario
         Armario scriptArmario = Object.FindFirstObjectByType<Armario>();
         if (scriptArmario != null) scriptArmario.puzzleResuelto = true;
 
-        // 3. CERRAR EL PANEL PRIMERO (para que no estorbe al diálogo)
-        if (panelPuzzle != null) panelPuzzle.SetActive(false);
-
-        // 4. ESPERA un momento con el panel ya cerrado
         yield return new WaitForSeconds(1.0f);
 
-        // 5. DISPARAR DIÁLOGO
-        if (dialogoVictoria != null) {
-            dialogoVictoria.TriggerDialogue();
-        }
+        if (panelPuzzle != null) panelPuzzle.SetActive(false);
+        if (dialogoVictoria != null) dialogoVictoria.TriggerDialogue();
+        if (disparador != null) disparador.FinalizarPuzzleYLimpiarEscena();
+    }
 
-        // Desactivar el manager
-        this.gameObject.SetActive(false);
+    private void DetenerAudio() {
+        if (altavoz != null && altavoz.isPlaying) altavoz.Stop();
+    }
+
+    private void OcultarElementosCompletados() {
+        if (imagenPistaPuzzle != null) imagenPistaPuzzle.SetActive(false);
+        if (panelPuzzle != null) panelPuzzle.SetActive(false);
+
+        Armario scriptArmario = Object.FindFirstObjectByType<Armario>();
+        if (scriptArmario != null) scriptArmario.puzzleResuelto = true;
+
+        this.enabled = false;
     }
 }

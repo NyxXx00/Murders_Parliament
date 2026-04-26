@@ -16,7 +16,7 @@ MonoBehaviour:
   ItemName: Cuadro C
   Description: 
   icon: {fileID: 264657377717626429, guid: 13e82452f2ce4cf4a9c0f6e80de5d6bd, type: 3}
-  cursorTexture: {fileID: 0}
+  cursorTexture: {fileID: 2800000, guid: 787996b5677faf841bab4d841c64936b, type: 3}
   tieneSecreto: 1
   inspeccionado: 0
   RevealedItemData: {fileID: 0}

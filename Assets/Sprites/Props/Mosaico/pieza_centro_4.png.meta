@@ -5,9 +5,6 @@ TextureImporter:
   - first:
       213: 5010457845713245021
     second: pieza_centro_4_0
-  - first:
-      213: -3151816043531947816
-    second: pieza_centro_4_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,10 +103,10 @@ TextureImporter:
       name: pieza_centro_4_0
       rect:
         serializedVersion: 2
-        x: 3507
-        y: 1531
-        width: 803
-        height: 1122
+        x: 24
+        y: 11
+        width: 414
+        height: 415
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,28 +117,6 @@ TextureImporter:
       bones: []
       spriteID: d539ec73dd8b88540800000000000000
       internalID: 5010457845713245021
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pieza_centro_4_1
-      rect:
-        serializedVersion: 2
-        x: 3995
-        y: 1732
-        width: 9
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8d0b6e7e1008244d0800000000000000
-      internalID: -3151816043531947816
       vertices: []
       indices: 
       edges: []
@@ -161,7 +136,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       pieza_centro_4_0: 5010457845713245021
-      pieza_centro_4_1: -3151816043531947816
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
