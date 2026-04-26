@@ -5244,7 +5244,7 @@ MonoBehaviour:
   cupcakeEnvenenado: 0
   tieneAceite: 0
   pasilloSaboteado: 0
-  jarronRoto: 1
+  jarronRoto: 0
 --- !u!4 &1184946686
 Transform:
   m_ObjectHideFlags: 0
